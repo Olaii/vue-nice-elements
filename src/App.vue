@@ -45,6 +45,42 @@ this.$events.$emit('notification', 'INFO', 'This is the message', 'This is the t
     <hr />
 
 
+    <!------------- Nice modal ------------->
+    <section>
+      <h4>Nice modal</h4>
+
+      <pre>&lt;NiceModal :isOpen="modalValue" @close="modalValue = false">
+  This is inside the modal
+&lt;/NiceModal></pre>
+
+      <NiceModal :isOpen="modalValue" @close="modalValue = false">
+        This is inside the modal
+      </NiceModal>
+      
+      <NiceButton text="Open modal" @click="modalValue = true" />
+    </section>
+
+    <hr />
+
+
+    <!------------- Nice sideview ------------->
+    <section>
+      <h4>Nice sideview</h4>
+
+      <pre>&lt;NiceSideview :isOpen="modalValue" @close="modalValue = false">
+  This is inside the sidebar
+&lt;/NiceSideview></pre>
+
+      <NiceSideview :isOpen="sideviewValue" @close="sideviewValue = false">
+        This is inside the sidebar
+      </NiceSideview>
+      
+      <NiceButton text="Open sideview" @click="sideviewValue = true" />
+    </section>
+
+    <hr />
+
+
     <!------------- Nice color ------------->
     <section>
       <h4>Nice color</h4>
@@ -414,7 +450,9 @@ export default {
       inputValue: "This is a test",
       toastMessage: "This is a test toast message",
       notificationTitle: "Title",
-      notificationMessage: "This is a test notification message"
+      notificationMessage: "This is a test notification message",
+      modalValue: false,
+      sideviewValue: false
     }
   },
   

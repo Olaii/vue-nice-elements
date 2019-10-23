@@ -16,6 +16,8 @@ import NiceTextarea from "@/components/NiceTextarea"
 import NiceToast from "@/components/NiceToast"
 import NiceToggle from "@/components/NiceToggle"
 import NiceLoading from "@/components/NiceLoading"
+import NiceModal from "@/components/NiceModal"
+import NiceSideview from "@/components/NiceSideview"
 
 
 export default {
@@ -40,5 +42,7 @@ export default {
     Vue.component('NiceToast', NiceToast)
     Vue.component('NiceToggle', NiceToggle)
     Vue.component('NiceLoading', NiceLoading)
+    Vue.component('NiceModal', NiceModal)
+    Vue.component('NiceSideview', NiceSideview)
   }
 }
