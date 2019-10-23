@@ -79,7 +79,7 @@ export default {
   padding-bottom: 0;
   padding-right: 0;
   background: var(--nice-bg);
-  border: 1px solid var(--nice-border-color);
+  border: var(--nice-border);
   border-radius: var(--nice-border-radius);
 
   .color {

@@ -2,9 +2,42 @@
   <div id="app" class="nice-sanbox">
     <h1>Nice Elements</h1>
 
+
+    <!------------- Nice notifications ------------->
+    <section>
+      <h4>Nice notifications</h4>
+      <pre>this.$events.$emit('notification', 'ERROR', 'This is the message', 'This is the title');
+this.$events.$emit('notification', 'SUCCESS', 'This is the message', 'This is the title');
+this.$events.$emit('notification', 'WARNING', 'This is the message', 'This is the title');
+this.$events.$emit('notification', 'INFO', 'This is the message', 'This is the title');</pre>
+
+      <NiceInput title="Notification title" v-model="notificationTitle" />
+      <NiceInput title="Notification message" v-model="notificationMessage" />
+
+      <NiceButton text="Error" @click="testNotification('ERROR')" class="mr-1 btn-danger" />
+      <NiceButton text="Success" @click="testNotification('SUCCESS')" class="mr-1 btn-success" />
+      <NiceButton text="Info" @click="testNotification('INFO')" class="mr-1 btn-info" />
+      <NiceButton text="Warning" @click="testNotification('WARNING')" class="btn-warning" />
+    </section>
+
+    <hr />
+
+
+    <!------------- Nice toast ------------->
+    <section>
+      <h4>Nice toast</h4>
+      
+      <NiceInput title="Toast message" v-model="toastMessage" />
+      <NiceButton text="Toast me" @click="testToast" />
+    </section>
+
+    <hr />
+
+
     <!------------- Nice color ------------->
-    <h4>Nice color</h4>
-    <pre>
+    <section>
+      <h4>Nice color</h4>
+      <pre>
 value: String,
 title: String,
 name: String,
@@ -12,53 +45,60 @@ placeholder: String,
 required: Boolean,
 textarea: Boolean,
 disabled: Boolean,
-noMargin: Boolean
-    </pre>
-    <NiceColor title="Nice color" v-model="colorValue" />
+noMargin: Boolean</pre>
+
+      <NiceColor title="Nice color" v-model="colorValue" />
+    </section>
 
     <hr />
 
 
     <!------------- Nice input ------------->
-    <h4>Nice Input</h4>
-    <pre>
+    <section>
+      <h4>Nice Input</h4>
+      <pre>
 value: [String, Number],
 title: String,
 name: String,
 type: {
-  type: String,
-  default: "text"
+type: String,
+default: "text"
 },
 placeholder: String,
 required: Boolean,
 textarea: Boolean,
 disabled: Boolean,
-noMargin: Boolean
-    </pre>
+noMargin: Boolean</pre>
 
-    <NiceInput title="Nice input" placeholder="This is a placeholder" />
-    <NiceInput title="Nice input" append="TEST" placeholder="This is a placeholder" />
+      <NiceInput title="Nice input" v-model="inputValue" placeholder="This is a placeholder" />
+      <NiceInput title="Appended text" v-model="inputValue" append="EURO" />
+      <NiceInput title="Prepended text" v-model="inputValue" prepend="EURO" />
+    </section>
 
     <hr />
 
 
     <!------------- Nice button ------------->
-    <h4>Nice Button</h4>
-    <pre>
+    <section>
+      <h4>Nice Button</h4>
+      <pre>
 text: String,
 disabled: Boolean,
 type: String,
 addClass: String,
 loading: Boolean,
-function: Function
-    </pre>
-    <NiceButton text="Nice button" />
+function: Function</pre>
+
+      <NiceButton text="Nice button" :loading="loading" class="mr-1" />
+      <NiceButton text="Toggle loading" @click="toggleLoading" />
+    </section>
 
     <hr />
 
     <!------------- Nice date ------------->
-    <h4>Nice Date</h4>
-    <pre>
+    <section>
+      <h4>Nice Date</h4>
+      <pre>
 value: [String, Date],
 title: String,
 noMargin: Boolean,
@@ -70,14 +110,16 @@ time: {
   default: true,
   type: Boolean
 }
-    </pre>
-    <NiceDate title="Nice date" :loading="true" placeholder="Placeholder" />
+      </pre>
+
+      <NiceDate title="Nice date" :loading="true" placeholder="Placeholder" />
+    </section>
 
     <hr />
 
 
-    <!------------- Nice dropdown ------------->
-    <h4>Nice Dropdown</h4>
+    <!------------- Nice dropdown simple ------------->
+    <h4>Nice Dropdown simple</h4>
     <pre>
 value: [Object, String, Number],
 values: Array,
@@ -105,13 +147,13 @@ valueName: {
   default: "value"
 }
     </pre>
-    <NiceDropdown title="Nice dropdown" v-model="dropdownValue" :values="dropdownValues" />
+    <NiceDropdownSimple title="Nice dropdown" v-model="dropdownValue" :values="dropdownValues" />
 
     <hr />
 
 
-    <!------------- Nice dropdown 2 ------------->
-    <h4>Nice Dropdown 2</h4>
+    <!------------- Nice dropdown ------------->
+    <h4>Nice Dropdown</h4>
     <pre>
 value: [Object, String, Number],
 title: String,
@@ -142,7 +184,7 @@ valueName: {
   default: "value"
 },
     </pre>
-    <NiceDropdown2 title="Nice dropdown 2" v-model="dropdownValue" :searchFunction="getDropdownValues" />
+    <NiceDropdown title="Nice dropdown 2" v-model="dropdownValue" :searchFunction="getDropdownValues" />
   
     <hr />
 
@@ -283,8 +325,9 @@ disabled: Boolean
       </pre>
       <NiceToggle title="Nice toggle" />
     </div>
-
-
+  
+    <hr />
+    
 
     <!------------- Nice actions ------------->
     <h4>Nice Actions</h4>
@@ -293,48 +336,25 @@ disabled: Boolean
       </pre>
       <NiceActions title="Nice toggle" />
     </div>
+
+    <hr />
+
+
+    <!------------- Nice notifications ------------->
+    <NiceNotifications />
+
+
+    <!------------- Nice toast ------------->
+    <NiceToast />
   </div>
 </template>
 
 
 
 <script>
-import NiceActions from "@/components/NiceActions"
-import NiceButton from "@/components/NiceButton"
-import NiceDate from "@/components/NiceDate"
-import NiceDropdown from "@/components/NiceDropdown"
-import NiceDropdown2 from "@/components/NiceDropdown2"
-import NiceFile from "@/components/NiceFile"
-import NiceFilter from "@/components/NiceFilter"
-import NiceInput from "@/components/NiceInput"
-import NiceProgress from "@/components/NiceProgress"
-import NiceProgressCircle from "@/components/NiceProgressCircle"
-import NiceSearch from "@/components/NiceSearch"
-import NiceText from "@/components/NiceText"
-import NiceTextarea from "@/components/NiceTextarea"
-import NiceToggle from "@/components/NiceToggle"
-import NiceColor from "@/components/NiceColor"
-
 export default {
   name: "app",
 
-  components: {
-    NiceActions,
-    NiceButton,
-    NiceDate,
-    NiceDropdown,
-    NiceDropdown2,
-    NiceFile,
-    NiceFilter,
-    NiceInput,
-    NiceProgress,
-    NiceProgressCircle,
-    NiceSearch,
-    NiceText,
-    NiceTextarea,
-    NiceToggle,
-    NiceColor
-  },
 
   data () {
     return {
@@ -345,15 +365,33 @@ export default {
         { id: 2, key: 2, value: "Value 2" },
       ],
       dropdownValue: null,
-      colorValue: null
+      colorValue: null,
+      inputValue: "This is a test",
+      toastMessage: "This is a test toast message",
+      notificationTitle: "Title",
+      notificationMessage: "This is a test notification message"
     }
   },
+  
 
   methods: {
     async getDropdownValues () {
       return this.dropdownValues
+    },
+
+    toggleLoading () {
+      this.loading = !this.loading
+    },
+
+    testNotification (type) {
+      this.$events.$emit('notification', type, this.notificationMessage, this.notificationTitle);
+    },
+
+    testToast () {
+      this.$events.$emit('toast', this.toastMessage);
     }
   },
+
 
   mounted () {
     setTimeout(() => {
@@ -362,6 +400,7 @@ export default {
   }
 };
 </script>
+
 
 
 <style lang="scss" scope>
@@ -380,6 +419,10 @@ body, html {
 h1 {
   margin: 0;
   margin-bottom: 3rem;
+}
+
+.mr-1 {
+  margin-right: 0.5rem;
 }
 
 hr {

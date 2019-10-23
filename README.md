@@ -1,4 +1,4 @@
-# vue-nice-elements
+# Vue Nice elements
 
 ## Project setup
 ```
@@ -12,7 +12,7 @@ npm run serve
 
 ### Compiles and minifies for production
 ```
-npm run build
+npm run build-lib
 ```
 
 ### Run your unit tests

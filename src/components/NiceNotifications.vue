@@ -19,14 +19,20 @@ export default {
   data () {
     return {
       timeoutTime: 3000,
-      notifications: []
+      notifications: [],
+      types: {
+        "ERROR": "Error",
+        "SUCCESS": "Success",
+        "INFO": "Info",
+        "WARNING": "Warning"
+      }
     }
   },
 
 
   mounted () {
-    this.$events.$on('notification', (message, type, title) => {
-      this.createNotification(message, type, title)
+    this.$events.$on('notification', (type, message, title) => {
+      this.createNotification(type, title, message)
     })
   },
 
@@ -37,7 +43,7 @@ export default {
 
 
   methods: {
-    createNotification (message, type, title) {
+    createNotification (type, title, message) {
       // Create object with random id
       var notification = {
         id: Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10),
@@ -49,11 +55,13 @@ export default {
       // Set default title
       if (!title) {
         if (type == "ERROR") {
-          notification.title = this.$gettext("Error")
+          notification.title = "Error"
         } else if (type == "SUCCESS") {
-          notification.title = this.$gettext("Success")
+          notification.title = "Success"
+        } else if (type == "INFO") {
+          notification.title = "Info"
         } else if (type == "WARNING") {
-          notification.title = this.$gettext("Warning")
+          notification.title = "Warning"
         }
       }
 
@@ -87,7 +95,7 @@ export default {
   max-height: 100vh;
   flex-wrap: wrap;
   display: flex;
-  overflow: scroll;
+  overflow: auto;
   overflow-x: hidden;
 
   .nice-notification {
@@ -112,12 +120,22 @@ export default {
     }
 
     &.ERROR {
-      background: var(--error-color);
+      background: var(--nice-error-color);
       color: white;
     }
 
     &.SUCCESS {
-      background: var(--success-color);
+      background: var(--nice-success-color);
+      color: white;
+    }
+
+    &.WARNING {
+      background: var(--nice-warning-color);
+      color: white;
+    }
+
+    &.INFO {
+      background: var(--nice-info-color);
       color: white;
     }
   }

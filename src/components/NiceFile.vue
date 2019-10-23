@@ -147,7 +147,7 @@ export default {
     font-size: 1em;
     background: var(--nice-bg);
     border-radius: var(--nice-border-radius);
-    border: 1px solid var(--nice-border-color);
+    border: var(--nice-border);
     font-family: inherit;
 
     &.dragging {
@@ -197,13 +197,13 @@ export default {
 
 .validation-error {
   label {
-    color: var(--error-color);
+    color: var(--nice-error-color);
   }
   .error-message {
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: 0.8em;
-    color: var(--error-color);
+    color: var(--nice-error-color);
   }
 }
 </style>

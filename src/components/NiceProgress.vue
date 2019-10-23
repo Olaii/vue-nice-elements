@@ -79,10 +79,6 @@ export default {
     border-radius: var(--nice-border-radius);
     color: white;
     overflow: hidden;
-
-    // .text {
-    //   background: linear-gradient(90deg, var(--error-color), var(--nice-base-color));
-    // }
   }
 }
 </style>

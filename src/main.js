@@ -1,8 +1,9 @@
 import NiceActions from "@/components/NiceActions"
 import NiceButton from "@/components/NiceButton"
 import NiceDate from "@/components/NiceDate"
+import NiceDropdownSimple from "@/components/NiceDropdownSimple"
 import NiceDropdown from "@/components/NiceDropdown"
-import NiceDropdown2 from "@/components/NiceDropdown2"
+import NiceColor from "@/components/NiceColor"
 import NiceFile from "@/components/NiceFile"
 import NiceFilter from "@/components/NiceFilter"
 import NiceInput from "@/components/NiceInput"
@@ -19,11 +20,14 @@ import NiceLoading from "@/components/NiceLoading"
 
 export default {
   install (Vue) {
+    Vue.prototype.$events = new Vue();
+
     Vue.component('NiceActions', NiceActions)
     Vue.component('NiceButton', NiceButton)
     Vue.component('NiceDate', NiceDate)
+    Vue.component('NiceDropdownSimple', NiceDropdownSimple)
     Vue.component('NiceDropdown', NiceDropdown)
-    Vue.component('NiceDropdown2', NiceDropdown2)
+    Vue.component('NiceColor', NiceColor)
     Vue.component('NiceFile', NiceFile)
     Vue.component('NiceFilter', NiceFilter)
     Vue.component('NiceInput', NiceInput)

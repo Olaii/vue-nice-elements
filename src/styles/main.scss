@@ -73,13 +73,13 @@
     padding: 0.8rem 1rem;
     padding-right: 2.5rem;
     border-radius: var(--nice-border-radius);
-    border: 1px solid var(--nice-border-color);
+    border: var(--nice-border);
     font-family: inherit;
     height: var(--nice-height);
     // color: var(--font-color);
 
     &.no-value {
-      color: red;
+      color: var(--nice-error-color);
     }
 
     &:focus {
@@ -98,5 +98,6 @@
   }
 }
 
-@import "inputs";
 @import "variables";
+@import "inputs";
+@import "buttons";

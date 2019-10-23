@@ -73,7 +73,7 @@ export default {
     right: 0;
     margin-top: 1rem;
     padding: 1rem;
-    background: white;
+    background: var(--nice-card);
     min-width: 220px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: var(--nice-border-radius);

@@ -369,7 +369,7 @@ export default {
     left: 0;
     top: 110%;
     width: 300px;
-    background: white;
+    background: var(--nice-card);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     border-radius: var(--nice-border-radius);

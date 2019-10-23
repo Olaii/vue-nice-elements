@@ -4,7 +4,7 @@
       {{ text }}
       <slot></slot>
     </span>
-    <Loader v-if="loading || innerLoading" class="loader" :size="30" />
+    <NiceLoading v-if="loading || innerLoading" class="loader" :size="30" />
   </button>
 </template>
 

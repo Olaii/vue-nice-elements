@@ -69,7 +69,7 @@ export default {
   align-items: center;
 
   .nice-toast {
-    background: white;
+    background: var(--nice-card);
     padding: 0.5rem 1rem;
     border-radius: 30px;
     font-size: 0.8em;

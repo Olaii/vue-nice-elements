@@ -1,0 +1,274 @@
+.btn {
+  background: var(--nice-base-color);
+  color: white;
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 0.8rem 1.3rem;
+  border: 0 solid var(--nice-base-color);
+  border-radius: var(--nice-border-radius);
+  user-select: none;
+  display: inline-block;
+  cursor: pointer;
+  min-height: var(--nice-height);
+  text-transform: none;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s;
+  white-space: nowrap;
+
+  svg {
+    height: 18px;
+    width: 18px;
+    fill: white;
+    margin: -0.3rem;
+  }
+
+  .loader {
+    --loader-color: white;
+  }
+
+  .icon-append { margin-left: 0.2rem; }
+  .icon-prepend { margin-right: 0.2rem; }
+
+  &:focus {
+    outline: 0;
+    // box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    // transform: scale(1.05);
+  }
+
+  &:hover {
+    background: var(--nice-base-color-darker);
+  }
+
+  &:active, &.active {
+    background: var(--nice-base-color-lighter);
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.1);
+    transform: scale(0.95);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background: var(--nice-disabled-color);
+
+      svg {
+        fill: var(--nice-font-color);
+      }
+
+      &:active {
+        background: var(--nice-disabled-color);
+        svg {
+          fill: var(--nice-font-color);
+        }
+      }
+    }
+  
+    &:active, &.active {
+      background: var(--nice-base-color);
+      box-shadow: 0 0 0;
+      transform: scale(1);
+    }
+  }
+}
+
+
+.btn-default {
+  color: var(--nice-font-color);
+  background: var(--nice-bg);
+  border-color: var(--nice-bg);
+
+  .loader {
+    --loader-color: black;
+  }
+  
+  svg {
+    fill: var(--nice-font-color);
+  }
+
+  &:focus {
+    background: #F3F3F3;
+  }
+
+  &:active, &.active {
+    background: #FBFBFB;
+  }
+
+  &:hover {
+    background: #F3F3F3;
+  }
+}
+
+
+.btn-success {
+  color: white;
+  background: var(--nice-success-color);
+  border-color: var(--nice-success-color);
+
+  &:focus {
+    background: var(--nice-success-color);
+  }
+
+  &:active, &.active {
+    background: var(--nice-success-color);
+  }
+
+  &:hover {
+    background: var(--nice-success-color);
+  }
+}
+
+
+.btn-danger {
+  color: white;
+  background: var(--nice-error-color);
+  border-color: var(--nice-error-color);
+
+  &:focus {
+    background: var(--nice-error-color);
+  }
+
+  &:active, &.active {
+    background: var(--nice-error-color);
+  }
+
+  &:hover {
+    background: var(--nice-error-color);
+  }
+}
+
+
+.btn-info {
+  color: white;
+  background: var(--nice-info-color);
+  border-color: var(--nice-info-color);
+
+  &:focus {
+    background: var(--nice-info-color);
+  }
+
+  &:active, &.active {
+    background: var(--nice-info-color);
+  }
+
+  &:hover {
+    background: var(--nice-info-color);
+  }
+}
+
+
+.btn-warning {
+  color: white;
+  background: var(--nice-warning-color);
+  border-color: var(--nice-warning-color);
+
+  &:focus {
+    background: var(--nice-warning-color);
+  }
+
+  &:hover {
+    background: var(--nice-warning-color);
+  }
+
+  &:active, &.active {
+    background: var(--nice-warning-color);
+  }
+}
+
+
+
+.btn-outline-default {
+  color: var(--nice-font-color);
+  background: transparent;
+
+  svg { fill: var(--nice-font-color); }
+  &:focus { background: var(--nice-bg-active); }
+  &:hover { background: var(--nice-bg-hover); }
+  &:active, &.active { background: var(--nice-bg-active); }
+}
+
+.btn-outline-primary {
+  color: var(--nice-base-color);
+  background: transparent;
+
+  svg { fill: var(--nice-base-color); }
+  &:focus { background: var(--nice-base-color); }
+  &:hover { background: var(--nice-base-color); }
+  &:active, &.active { background: var(--nice-base-color); }
+  &:hover, &:active, &.active, &:focus {
+    svg { fill: white; }
+  }
+}
+
+.btn-outline-success {
+  color: var(--nice-success-color);
+  background: transparent;
+
+  svg { fill: var(--nice-success-color); }
+  &:focus { background: var(--nice-success-color); }
+  &:hover { background: var(--nice-success-color); }
+  &:active, &.active { background: var(--nice-success-color); }
+  &:hover, &:active, &.active, &:focus {
+    svg { fill: white; }
+  }
+}
+
+.btn-outline-danger {
+  color: var(--nice-error-color);
+  background: transparent;
+
+  svg { fill: var(--nice-error-color); }
+  &:focus { background: var(--nice-error-color); }
+  &:hover { background: var(--nice-error-color); }
+  &:active, &.active { background: var(--nice-error-color); }
+  &:hover, &:active, &.active, &:focus {
+    svg { fill: white; }
+  }
+}
+
+.btn-outline-info {
+  color: var(--nice-info-color);
+  background: transparent;
+
+  &:focus { background: var(--nice-info-color); }
+  &:hover { background: var(--nice-info-color); }
+  &:active, &.active { background: var(--nice-info-color); }
+  &:hover, &:active, &.active, &:focus {
+    svg { fill: white; }
+  }
+}
+
+
+.btn-outline-warning {
+  color: var(--nice-warning-color);
+  background: transparent;
+
+  &:focus { background: var(--nice-warning-color); }
+  &:hover { background: var(--nice-warning-color); }
+  &:active, &.active { background: var(--nice-warning-color); }
+  &:hover, &:active, &.active, &:focus {
+    svg { fill: white; }
+  }
+}
+
+
+
+.btn-block {
+  width: 100%;
+}
+
+.btn-big {
+  padding: 1rem 2rem;
+  font-size: 1.2em;
+  border-radius: var(--nice-border-radius);
+}
+
+.btn-sm {
+  font-size: 0.8em;
+  line-height: 0;
+  min-height: unset;
+  border-radius: 5px;
+}

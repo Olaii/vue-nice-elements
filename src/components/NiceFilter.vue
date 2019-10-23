@@ -75,7 +75,7 @@ export default {
       width: 200px;
       margin-top: 0.8rem;
       margin-right: -1.4rem;
-      background: white;
+      background: var(--nice-card);
       padding: 0.5rem;
       border-radius: var(--nice-border-radius);
       box-shadow: 0 0 20px #ccc;
