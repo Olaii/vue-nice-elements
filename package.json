@@ -1,10 +1,13 @@
 {
-  "name": "vue-nice-elements",
+  "name": "@klemen1337/vue-nice-elements",
   "version": "0.1.0",
+  "description": "Nice elements for Vue projects",
+  "main": "./dist/NiceElements.common.js",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve src/demo.js",
     "build": "vue-cli-service build",
+    "build-lib": "vue-cli-service build --target lib --name NiceElements src/main.js",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"

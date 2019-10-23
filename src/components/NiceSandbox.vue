@@ -1,8 +1,7 @@
 <template>
-  <div id="app" class="nice-sanbox">
-    <h1>Nice Elements</h1>
+  <div class="nice-sanbox">
 
-    <!------------- Nice color ------------->
+        <!------------- Nice color ------------->
     <h4>Nice color</h4>
     <pre>
 value: String,
@@ -13,7 +12,7 @@ required: Boolean,
 textarea: Boolean,
 disabled: Boolean,
 noMargin: Boolean
-    </pre>
+</pre>
     <NiceColor title="Nice color" v-model="colorValue" />
 
     <hr />
@@ -34,10 +33,8 @@ required: Boolean,
 textarea: Boolean,
 disabled: Boolean,
 noMargin: Boolean
-    </pre>
-
+</pre>
     <NiceInput title="Nice input" placeholder="This is a placeholder" />
-    <NiceInput title="Nice input" append="TEST" placeholder="This is a placeholder" />
 
     <hr />
 
@@ -217,7 +214,7 @@ debounce: {
   type: Number
 }
     </pre>
-    <NiceSearch title="Nice search" placeholder="Search..." />
+    <NiceSearch title="Nice search" />
 
     <hr />
 
@@ -235,7 +232,7 @@ noMargin: Boolean
 
 
     <!------------- Nice textareat ------------->
-    <h4>Nice Textarea</h4>
+    <h4>NiceTextarea</h4>
     <pre>
 value: {
   type: [String, Number],
@@ -316,7 +313,7 @@ import NiceToggle from "@/components/NiceToggle"
 import NiceColor from "@/components/NiceColor"
 
 export default {
-  name: "app",
+  name: "NiceSandbox",
 
   components: {
     NiceActions,
@@ -362,34 +359,3 @@ export default {
   }
 };
 </script>
-
-
-<style lang="scss" scope>
-@import "./styles/main";
-
-body, html {
-  padding: 2rem;
-  margin: 0;
-
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: black;
-}
-
-h1 {
-  margin: 0;
-  margin-bottom: 3rem;
-}
-
-hr {
-  margin: 3rem 0;
-  padding: 0;
-}
-
-pre {
-  padding: 1rem;
-  background: rgb(236, 236, 236);
-  border-radius: 1rem;
-}
-</style>

@@ -1,0 +1,59 @@
+.nice-component {
+  .input-group {
+    max-width: 100%;
+  }
+
+    // label {
+    //   display: block;
+    //   font-weight: bold;
+    //   margin-bottom: 5px;
+    //   font-size: 1em;
+    // }
+    
+  input, textarea {
+    resize: vertical;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    font-size: 1em;
+    background: var(--nice-bg);
+    padding: 0.8rem 1rem;
+    border-radius: var(--nice-border-radius);
+    border: var(--nice-border);
+    font-family: inherit;
+    min-height: var(--nice-height);
+
+    &:focus {
+      outline: 0;
+      background: var(--nice-bg-focus);
+    }
+
+    &:hover {
+      background: var(--nice-bg-hover);
+    }
+  }
+
+  textarea {
+    height: auto;
+  }
+
+  // rgba(0,0,0,0.3);
+  --placeholder-color: var(--font-color);
+
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: var(--placeholder-color);
+    opacity: 0.2;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: var(--placeholder-color);
+    opacity: 0.2;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: var(--placeholder-color);
+    opacity: 0.2;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: var(--placeholder-color);
+    opacity: 0.2;
+  }
+}
