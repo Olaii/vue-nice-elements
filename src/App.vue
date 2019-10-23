@@ -6,10 +6,15 @@
     <!------------- Nice notifications ------------->
     <section>
       <h4>Nice notifications</h4>
+
       <pre>this.$events.$emit('notification', 'ERROR', 'This is the message', 'This is the title');
 this.$events.$emit('notification', 'SUCCESS', 'This is the message', 'This is the title');
 this.$events.$emit('notification', 'WARNING', 'This is the message', 'This is the title');
 this.$events.$emit('notification', 'INFO', 'This is the message', 'This is the title');</pre>
+
+      <pre>&lt;NiceNotifications /></pre>
+
+      <NiceNotifications />
 
       <NiceInput title="Notification title" v-model="notificationTitle" />
       <NiceInput title="Notification message" v-model="notificationMessage" />
@@ -26,6 +31,12 @@ this.$events.$emit('notification', 'INFO', 'This is the message', 'This is the t
     <!------------- Nice toast ------------->
     <section>
       <h4>Nice toast</h4>
+
+      <pre>this.$events.$emit('toast', 'This is the message')</pre>
+
+      <pre>&lt;NiceToast /></pre>
+
+      <NiceToast />
       
       <NiceInput title="Toast message" v-model="toastMessage" />
       <NiceButton text="Toast me" @click="testToast" />
@@ -46,6 +57,8 @@ required: Boolean,
 textarea: Boolean,
 disabled: Boolean,
 noMargin: Boolean</pre>
+
+      <pre>&lt;NiceColor title="Nice color" v-model="colorValue" /></pre>
 
       <NiceColor title="Nice color" v-model="colorValue" />
     </section>
@@ -70,6 +83,11 @@ textarea: Boolean,
 disabled: Boolean,
 noMargin: Boolean</pre>
 
+      <pre>
+&lt;NiceInput title="Nice input" v-model="inputValue" placeholder="This is a placeholder" />
+&lt;NiceInput title="Appended text" v-model="inputValue" append="EURO" />
+&lt;NiceInput title="Prepended text" v-model="inputValue" prepend="EURO" /></pre>
+
       <NiceInput title="Nice input" v-model="inputValue" placeholder="This is a placeholder" />
       <NiceInput title="Appended text" v-model="inputValue" append="EURO" />
       <NiceInput title="Prepended text" v-model="inputValue" prepend="EURO" />
@@ -89,6 +107,10 @@ addClass: String,
 loading: Boolean,
 function: Function</pre>
 
+      <pre>
+&lt;NiceButton text="Nice button" :loading="loading" class="mr-1" />
+&lt;NiceButton text="Toggle loading" @click="toggleLoading" /></pre>
+
       <NiceButton text="Nice button" :loading="loading" class="mr-1" />
       <NiceButton text="Toggle loading" @click="toggleLoading" />
     </section>
@@ -104,7 +126,6 @@ title: String,
 noMargin: Boolean,
 required: Boolean,
 disabled: Boolean,
-loading: Boolean,
 placeholder: String,
 time: {
   default: true,
@@ -112,7 +133,9 @@ time: {
 }
       </pre>
 
-      <NiceDate title="Nice date" :loading="true" placeholder="Placeholder" />
+      <pre>&lt;NiceDate title="Nice date" placeholder="Select date" v-model="dateValue" /></pre>
+
+      <NiceDate title="Nice date" placeholder="Select date" v-model="dateValue" />
     </section>
 
     <hr />
@@ -147,6 +170,9 @@ valueName: {
   default: "value"
 }
     </pre>
+
+    <pre>&lt;NiceDropdownSimple title="Nice dropdown" v-model="dropdownValue" :values="dropdownValues" /></pre>
+
     <NiceDropdownSimple title="Nice dropdown" v-model="dropdownValue" :values="dropdownValues" />
 
     <hr />
@@ -182,8 +208,10 @@ keyName: {
 valueName: {
   type: String,
   default: "value"
-},
-    </pre>
+}</pre>
+
+    <pre>&lt;NiceDropdown title="Nice dropdown 2" v-model="dropdownValue" :searchFunction="getDropdownValues" /></pre>
+
     <NiceDropdown title="Nice dropdown 2" v-model="dropdownValue" :searchFunction="getDropdownValues" />
   
     <hr />
@@ -196,26 +224,29 @@ title: String,
 required: Boolean,
 disabled: Boolean,
 noMargin: Boolean,
-canEdit: Boolean
-    </pre>
+canEdit: Boolean</pre>
+
+    <pre>&lt;NiceFile title="Nice file" /></pre>
+
     <NiceFile title="Nice file" />
 
     <hr />
 
 
     <!------------- Nice filter ------------->
-    <h4>Nice Filter</h4>
+    <!-- <h4>Nice Filter</h4>
     <pre>
 text: String
     </pre>
     <NiceFilter title="Nice filter" />
 
-    <hr />
+    <hr /> -->
 
 
     <!------------- Nice progress ------------->
-    <h4>Nice Progress</h4>
-    <pre>
+    <section>
+      <h4>Nice Progress</h4>
+      <pre>
 amount: {
   type: Number,
   default: 0
@@ -223,16 +254,20 @@ amount: {
 total: {
   type: Number,
   default: 0
-}
-    </pre>
-    <NiceProgress title="Nice progress" :amount="12" :total="20" />
+}</pre>
+
+      <pre>&lt;NiceProgress title="Nice progress" :amount="12" :total="20" /></pre>
+
+      <NiceProgress title="Nice progress" :amount="12" :total="20" />
+    </section>
 
     <hr />
 
 
     <!------------- Nice progress circle ------------->
-    <h4>Nice Progress Circle</h4>
-    <pre>
+    <section>
+      <h4>Nice Progress Circle</h4>
+      <pre>
 amount: {
   type: Number,
   default: 0
@@ -240,16 +275,20 @@ amount: {
 total: {
   type: Number,
   default: 0
-}
-    </pre>
-    <NiceProgressCircle title="Nice progress circle" :amount="12" :total="20" />
+}</pre>
+
+      <pre>&lt;NiceProgressCircle title="Nice progress circle" :amount="12" :total="20" /></pre>
+
+      <NiceProgressCircle title="Nice progress circle" :amount="12" :total="20" />
+    </section>
 
     <hr />
 
 
     <!------------- Nice search ------------->
-    <h4>Nice Search</h4>
-    <pre>
+    <section>
+      <h4>Nice Search</h4>
+      <pre>
 title: String,
 value: String,
 placeholder: String,
@@ -257,28 +296,36 @@ disabled: Boolean,
 debounce: {
   default: 500,
   type: Number
-}
-    </pre>
-    <NiceSearch title="Nice search" placeholder="Search..." />
+}</pre>
+
+      <pre>&lt;NiceSearch title="Nice search" placeholder="Search..." /></pre>
+      
+      <NiceSearch title="Nice search" placeholder="Search..." />
+    </section>
 
     <hr />
 
 
     <!------------- Nice text ------------->
-    <h4>Nice Text</h4>
-    <pre>
+    <section>
+      <h4>Nice Text</h4>
+      <pre>
 title: String,
 text: [String, Number],
-noMargin: Boolean
-    </pre>
-    <NiceText title="Nice text" text="This is a test" />
+noMargin: Boolean</pre>
+
+      <pre>&lt;NiceText title="Nice text" text="This is a test" /></pre>
+
+      <NiceText title="Nice text" text="This is a test" />
+    </section>
 
     <hr />
 
 
     <!------------- Nice textareat ------------->
-    <h4>Nice Textarea</h4>
-    <pre>
+    <section>
+      <h4>Nice Textarea</h4>
+      <pre>
 value: {
   type: [String, Number],
   default: ''
@@ -298,9 +345,12 @@ maxHeight: {
 important: {
   type: [Boolean, Array],
   default: false
-}
-    </pre>
-    <NiceTextarea title="Nice textarea" />
+}</pre>
+
+      <pre>&lt;NiceTextarea title="Nice textarea" /></pre>
+
+      <NiceTextarea title="Nice textarea" />
+    </section>
 
     <hr />
 
@@ -321,31 +371,25 @@ no: {
   default: "No",
   type: [String, Number]
 },
-disabled: Boolean
-      </pre>
+disabled: Boolean</pre>
+
+      <pre>&lt;NiceToggle title="Nice toggle" /></pre>
+
       <NiceToggle title="Nice toggle" />
     </div>
   
     <hr />
-    
+
 
     <!------------- Nice actions ------------->
-    <h4>Nice Actions</h4>
+    <!-- <h4>Nice Actions</h4>
     <div>
       <pre>
       </pre>
       <NiceActions title="Nice toggle" />
-    </div>
-
-    <hr />
+    </div> -->
 
 
-    <!------------- Nice notifications ------------->
-    <NiceNotifications />
-
-
-    <!------------- Nice toast ------------->
-    <NiceToast />
   </div>
 </template>
 
@@ -366,6 +410,7 @@ export default {
       ],
       dropdownValue: null,
       colorValue: null,
+      dateValue: null,
       inputValue: "This is a test",
       toastMessage: "This is a test toast message",
       notificationTitle: "Title",
@@ -426,8 +471,9 @@ h1 {
 }
 
 hr {
-  margin: 3rem 0;
+  margin: 5rem 0;
   padding: 0;
+  border-top: 1px solid #ccc;
 }
 
 pre {

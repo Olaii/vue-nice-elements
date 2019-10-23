@@ -105,7 +105,6 @@ export default {
     noMargin: Boolean,
     required: Boolean,
     disabled: Boolean,
-    loading: Boolean,
     placeholder: String,
     time: {
       default: true,
