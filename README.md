@@ -1,6 +1,6 @@
 # Vue Nice elements
 
-Vue main:
+Vue:
 ```js
 import NiceElements from 'vue-nice-elements';
 Vue.use(NiceElements);

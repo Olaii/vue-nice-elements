@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "Nice elements for Vue projects",
   "main": "./dist/NiceElements.common.js",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve src/demo.js",
     "build": "vue-cli-service build",
