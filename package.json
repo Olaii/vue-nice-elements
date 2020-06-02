@@ -1,6 +1,6 @@
 {
   "name": "vue-nice-elements",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Nice elements for Vue projects",
   "main": "./dist/NiceElements.common.js",
   "scripts": {
