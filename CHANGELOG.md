@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v0.1.2 (3.6.2020)
+- fixed style building
+
+
 ## v0.1.1 (2.6.2020)
 - fixes
 
