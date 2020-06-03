@@ -1,15 +1,11 @@
 # Vue Nice elements
 
-Vue:
 ```js
-import NiceElements from 'vue-nice-elements';
-Vue.use(NiceElements);
+import NiceElements from'vue-nice-elements'
+import "vue-nice-elements/dist/NiceElements.css";
+Vue.use(NiceElements)
 ```
 
-CSS:
-```html
-<link rel="stylesheet" href="/node_modules/vue-nice-elements/dist/NiceElements.css">
-```
 
 ## Includes
 
