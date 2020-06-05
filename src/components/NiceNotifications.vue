@@ -1,6 +1,6 @@
 <template>
-  <div class="nice-notifications">
-    <transition-group name="notification" tag="div">
+  <div class="nice-notifications-wrapper">
+    <transition-group name="notification" class="nice-notifications" tag="div">
       <div v-for="notification in notifications" :key="notification.id" class="nice-notification" :class="notification.type">
         <label>{{ notification.title }}</label>
         <p>{{ notification.message }}</p>
@@ -18,6 +18,7 @@ export default {
 
   data () {
     return {
+      eventName: 'nice-notification',
       timeoutTime: 3000,
       notifications: [],
       types: {
@@ -31,14 +32,14 @@ export default {
 
 
   mounted () {
-    this.$events.$on('notification', (type, message, title) => {
+    this.$events.$on(this.eventName, (type, message, title) => {
       this.createNotification(type, title, message)
-    })
+    });
   },
 
 
   destroyed () {
-    this.$events.$off('notification');
+    this.$events.$off(this.eventName);
   },
 
 
@@ -55,13 +56,11 @@ export default {
       // Set default title
       if (!title) {
         if (type == "ERROR") {
-          notification.title = "Error"
+          notification.title = this.$gettext("Error")
         } else if (type == "SUCCESS") {
-          notification.title = "Success"
-        } else if (type == "INFO") {
-          notification.title = "Info"
+          notification.title = this.$gettext("Success")
         } else if (type == "WARNING") {
-          notification.title = "Warning"
+          notification.title = this.$gettext("Warning")
         }
       }
 
@@ -87,16 +86,19 @@ export default {
 
 
 <style lang="scss" scoped>
-.nice-notifications {
+.nice-notifications-wrapper {
   z-index: 99999;
   position: fixed;
   top: 0;
   right: 0;
-  max-height: 100vh;
-  flex-wrap: wrap;
-  display: flex;
-  overflow: auto;
-  overflow-x: hidden;
+
+  .nice-notifications {
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    overflow-x: hidden;
+  }
 
   .nice-notification {
     background: #E5E5E5;
@@ -104,13 +106,13 @@ export default {
     border-radius: var(--nice-border-radius);
     margin: 0.5rem 1rem;
     line-height: 1;
-    min-width: 250px;
+    width: 300px;
 
     label {
       display: block;
       font-weight: bold;
-      font-size: 1.2em;
-      margin-bottom: 0.8rem;
+      font-size: 0.8em;
+      margin-bottom: 10px;
     }
 
     p {

@@ -1,7 +1,7 @@
 <template>
   <button class="nice-component nice-button btn" :class="[addClass, { 'disabled': disabled }]" :disabled="disabled" :type="type" @click="handleClick">
     <span :class="{ 'hidden': loading || innerLoading }">
-      {{ text }}
+      <span>{{ text }}</span>
       <slot></slot>
     </span>
     <NiceLoading v-if="loading || innerLoading" class="loader" :size="30" />

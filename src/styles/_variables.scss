@@ -9,9 +9,9 @@
   --nice-bg-hover: #f3f3f3;
   --nice-bg-active: #FAFAFA;
   --nice-bg-focus: #fafafa;
-  --nice-border-color: #fafafa;
-  --nice-border: var(--nice-border);
-  --nice-border-radius: 1rem;
+  --nice-border-color: #efefef;
+  --nice-border: 1px solid var(--nice-border-color);
+  --nice-border-radius: 10px;
 
   --nice-error-color: red;
   --nice-success-color: green;

@@ -7,10 +7,10 @@
     <section>
       <h4>Nice notifications</h4>
 
-      <pre>this.$events.$emit('notification', 'ERROR', 'This is the message', 'This is the title');
-this.$events.$emit('notification', 'SUCCESS', 'This is the message', 'This is the title');
-this.$events.$emit('notification', 'WARNING', 'This is the message', 'This is the title');
-this.$events.$emit('notification', 'INFO', 'This is the message', 'This is the title');</pre>
+      <pre>this.$events.$emit('nice-notification', 'ERROR', 'This is the message', 'This is the title');
+this.$events.$emit('nice-notification', 'SUCCESS', 'This is the message', 'This is the title');
+this.$events.$emit('nice-notification', 'WARNING', 'This is the message', 'This is the title');
+this.$events.$emit('nice-notification', 'INFO', 'This is the message', 'This is the title');</pre>
 
       <pre>&lt;NiceNotifications /></pre>
 
@@ -25,6 +25,7 @@ this.$events.$emit('notification', 'INFO', 'This is the message', 'This is the t
       <NiceButton text="Warning" @click="testNotification('WARNING')" class="btn-warning" />
     </section>
 
+
     <hr />
 
 
@@ -32,7 +33,7 @@ this.$events.$emit('notification', 'INFO', 'This is the message', 'This is the t
     <section>
       <h4>Nice toast</h4>
 
-      <pre>this.$events.$emit('toast', 'This is the message')</pre>
+      <pre>this.$events.$emit('nice-toast', 'This is the message')</pre>
 
       <pre>&lt;NiceToast /></pre>
 
@@ -125,8 +126,8 @@ noMargin: Boolean</pre>
 &lt;NiceInput title="Prepended text" v-model="inputValue" prepend="EURO" /></pre>
 
       <NiceInput title="Nice input" v-model="inputValue" placeholder="This is a placeholder" />
-      <NiceInput title="Appended text" v-model="inputValue" append="EURO" />
-      <NiceInput title="Prepended text" v-model="inputValue" prepend="EURO" />
+      <NiceInput title="Appended text" v-model="inputValue" placeholder="This is a placeholder" append="EURO" />
+      <NiceInput title="Prepended text" v-model="inputValue" placeholder="This is a placeholder" prepend="EURO" errorString="This is an error!" />
     </section>
 
     <hr />
@@ -467,11 +468,11 @@ export default {
     },
 
     testNotification (type) {
-      this.$events.$emit('notification', type, this.notificationMessage, this.notificationTitle);
+      this.$events.$emit('nice-notification', type, this.notificationMessage, this.notificationTitle);
     },
 
     testToast () {
-      this.$events.$emit('toast', this.toastMessage);
+      this.$events.$emit('nice-toast', this.toastMessage);
     }
   },
 
@@ -511,12 +512,12 @@ h1 {
 hr {
   margin: 5rem 0;
   padding: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--nice-border-color);
 }
 
 pre {
   padding: 1rem;
   background: rgb(236, 236, 236);
-  border-radius: 1rem;
+  border-radius: var(--nice-border-radius);
 }
 </style>

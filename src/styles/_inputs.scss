@@ -1,6 +1,10 @@
 .nice-component {
   .input-group {
     max-width: 100%;
+
+    &:focus-within {
+      // border-color: var(--nice-base-color);
+    }
   }
 
     // label {

@@ -12,13 +12,14 @@ export default {
 
   data () {
     return {
+      eventName: 'nice-toast',
       timeoutTime: 3000,
       toasts: []
     }
   },
 
   mounted () {
-    this.$events.$on('toast', message => {
+    this.$events.$on(this.eventName, message => {
       this.createToast(message)
     })
   },
@@ -49,7 +50,7 @@ export default {
   },
 
   destroyed () {
-    this.$events.$off('toast');
+    this.$events.$off(this.eventName);
   }
 };
 </script>

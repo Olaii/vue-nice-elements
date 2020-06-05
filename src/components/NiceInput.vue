@@ -1,5 +1,5 @@
 <template>
-  <div class="nice-component nice-input" :class="{ 'disabled': disabled, 'no-margin': noMargin, 'validation-error': errorMessage || error }">
+  <div class="nice-component nice-input" :class="{ 'disabled': disabled, 'no-margin': noMargin, 'validation-error': errorMessage || error || errorString }">
     <div class="nice-label" v-if="title">{{ title }}<span v-if="required">*</span></div>
     <div class="input-group">
       <div class="prepend" v-if="prepend">{{ prepend }}</div>
@@ -28,6 +28,7 @@
       <div class="append" v-if="append">{{ append }}</div>
     </div>
 
+    <div class="error-message" v-if="errorString">{{ errorString }}</div>
     <div class="error-message" v-if="errorMessage">{{ errorMessage }}</div>
     <div class="error-message" v-if="error">{{ error[0].message }}</div>
   </div>
@@ -53,6 +54,7 @@ export default {
     prepend: String,
     append: String,
     error: [String, Object, Array],
+    errorString: [String],
     required: Boolean,
     textarea: Boolean,
     disabled: Boolean,
@@ -72,6 +74,7 @@ export default {
   },
 
   mounted () {
+    // this.$emit('input', val)
     this.validation()
   },
 
@@ -92,8 +95,8 @@ export default {
   },
 
   watch: {
-    inputVal(val) {
-      this.$emit('input', val);
+    inputVal (value) {
+      this.$emit('input', value);
     },
     value () {
       this.inputVal = this.value
@@ -107,6 +110,7 @@ export default {
 <style lang="scss" scoped>
 .input-group {
   display: flex;
+  border: var(--nice-border);
   border-radius: var(--nice-border-radius);
   overflow: hidden;
 
@@ -118,27 +122,34 @@ export default {
     padding: 0 1rem;
   }
 
+  .append {
+    border-right: var(--nice-border);
+  }
+  
+  .prepend {
+    border-left: var(--nice-border);
+  }
+
   input {
+    border: 0 none;
     border-radius: 0;
   }
 }
 
 .validation-error {
-  label {
+  .nice-label {
     color: var(--nice-error-color);
   }
 
-  input, textarea {
-    // border: 2px solid var(--nice-error-color);
-    // color: var(--nice-error-color);
+  .input-group {
+    border: 1px solid var(--nice-error-color);
   }
 }
 
 .error-message {
-  // padding-left: 1rem;
-  // padding-right: 1rem;
   padding-top: 5px;
   font-size: 0.8em;
   color: var(--nice-error-color);
+  text-align: right;
 }
 </style>

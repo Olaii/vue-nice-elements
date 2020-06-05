@@ -44,9 +44,10 @@ export default {
     display: block;
     font-size: 1em;
     background:var(--nice-bg);
-    padding: 0.8rem 1rem;
+    // padding: 0.8rem 1rem;
+    padding: 0.3rem 0;
     border-radius: var(--nice-border-radius);
-    border: var(--nice-border);
+    // border: var(--nice-border);
     // height: var(--nice-height);
     overflow: hidden;
     line-height: 1.3;
