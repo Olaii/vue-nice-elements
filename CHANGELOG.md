@@ -1,6 +1,12 @@
 # Changelog
 
 
+## v0.1.3 (5.6.2020)
+- changed toast event to nice-toast,
+- changed notification event to nice-notification,
+- fixes
+
+
 ## v0.1.2 (3.6.2020)
 - fixed style building
 
