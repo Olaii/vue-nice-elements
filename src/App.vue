@@ -3,6 +3,86 @@
     <h1>Nice Elements</h1>
 
 
+    <section>
+       <h4>Buttons</h4>
+
+       <div class="mb-2">
+        <div class="mr-1 btn btn-default">btn-default</div>
+        <div class="mr-1 btn btn-primary">btn-primary</div>
+        <div class="mr-1 btn btn-danger">btn-danger</div>
+        <div class="mr-1 btn btn-success">btn-success</div>
+        <div class="mr-1 btn btn-info">btn-info</div>
+        <div class="mr-1 btn btn-warning">btn-warning</div>
+      </div>
+
+      <div class="mb-2">
+        <div class="mr-1 btn btn-sm btn-default">btn-default btn-sm</div>
+        <div class="mr-1 btn btn-sm btn-primary">btn-primary btn-sm</div>
+        <div class="mr-1 btn btn-sm btn-danger">btn-danger btn-sm</div>
+        <div class="mr-1 btn btn-sm btn-success">btn-success btn-sm</div>
+        <div class="mr-1 btn btn-sm btn-info">btn-info btn-sm</div>
+        <div class="mr-1 btn btn-sm btn-warning">btn-warning btn-sm</div>
+      </div>
+
+      <div class="mb-2">
+        <div class="mr-1 btn btn-lg btn-default">btn-default btn-lg</div>
+        <div class="mr-1 btn btn-lg btn-primary">btn-primary btn-lg</div>
+        <div class="mr-1 btn btn-lg btn-danger">btn-danger btn-lg</div>
+        <div class="mr-1 btn btn-lg btn-success">btn-success btn-lg</div>
+        <div class="mr-1 btn btn-lg btn-info">btn-info btn-lg</div>
+        <div class="mr-1 btn btn-lg btn-warning">btn-warning btn-lg</div>
+      </div>
+
+      <div class="mb-2">
+        <button class="mr-1 btn btn-default" disabled>btn-default</button>
+        <button class="mr-1 btn btn-primary" disabled>btn-primary</button>
+        <button class="mr-1 btn btn-danger" disabled>btn-danger</button>
+        <button class="mr-1 btn btn-success" disabled>btn-success</button>
+        <button class="mr-1 btn btn-info" disabled>btn-info</button>
+        <button class="mr-1 btn btn-warning" disabled>btn-warning</button>
+      </div>
+
+      <div class="mb-2">
+        <div class="mr-1 btn btn-outline-default">btn-outline-default</div>
+        <div class="mr-1 btn btn-outline-primary">btn-outline-primary</div>
+        <div class="mr-1 btn btn-outline-danger">btn-outline-danger</div>
+        <div class="mr-1 btn btn-outline-success">btn-outline-success</div>
+        <div class="mr-1 btn btn-outline-info">btn-outline-info</div>
+        <div class="mr-1 btn btn-outline-warning">btn-outline-warning</div>
+      </div>
+
+      <div class="mb-2">
+        <div class="mr-1 btn btn-sm btn-outline-default">btn-outline-default btn-sm</div>
+        <div class="mr-1 btn btn-sm btn-outline-primary">btn-outline-primary btn-sm</div>
+        <div class="mr-1 btn btn-sm btn-outline-danger">btn-outline-danger btn-sm</div>
+        <div class="mr-1 btn btn-sm btn-outline-success">btn-outline-success btn-sm</div>
+        <div class="mr-1 btn btn-sm btn-outline-info">btn-outline-info btn-sm</div>
+        <div class="mr-1 btn btn-sm btn-outline-warning">btn-outline-warning btn-sm</div>
+      </div>
+
+      <div class="mb-2">
+        <div class="mr-1 btn btn-lg btn-outline-default">btn-outline-default btn-lg</div>
+        <div class="mr-1 btn btn-lg btn-outline-primary">btn-outline-primary btn-lg</div>
+        <div class="mr-1 btn btn-lg btn-outline-danger">btn-outline-danger btn-lg</div>
+        <div class="mr-1 btn btn-lg btn-outline-success">btn-outline-success btn-lg</div>
+        <div class="mr-1 btn btn-lg btn-outline-info">btn-outline-info btn-lg</div>
+        <div class="mr-1 btn btn-lg btn-outline-warning">btn-outline-warning btn-lg</div>
+      </div>
+
+      <div class="mb-2">
+        <button class="mr-1 btn btn-outline-default" disabled>btn-outline-default</button>
+        <button class="mr-1 btn btn-outline-primary" disabled>btn-outline-primary</button>
+        <button class="mr-1 btn btn-outline-danger" disabled>btn-outline-danger</button>
+        <button class="mr-1 btn btn-outline-success" disabled>btn-outline-success</button>
+        <button class="mr-1 btn btn-outline-info" disabled>btn-outline-info</button>
+        <button class="mr-1 btn btn-outline-warning" disabled>btn-outline-warning</button>
+      </div>
+
+    </section>
+    
+    <hr />
+
+
     <!------------- Nice notifications ------------->
     <section>
       <h4>Nice notifications</h4>
@@ -508,6 +588,11 @@ h1 {
 .mr-1 {
   margin-right: 0.5rem;
 }
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
 
 hr {
   margin: 5rem 0;

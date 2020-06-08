@@ -42,7 +42,7 @@
     background: var(--nice-base-color-darker);
   }
 
-  &:active, &.active {
+  &:active, &.active, &:hover:active {
     background: var(--nice-base-color-lighter);
     box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.1);
     transform: scale(0.95);
@@ -51,31 +51,10 @@
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
-
-    &:hover {
-      background: var(--nice-disabled-color);
-
-      svg {
-        fill: var(--nice-font-color);
-      }
-
-      &:active {
-        background: var(--nice-disabled-color);
-        svg {
-          fill: var(--nice-font-color);
-        }
-      }
-    }
-  
-    &:active, &.active {
-      background: var(--nice-base-color);
-      box-shadow: 0 0 0;
-      transform: scale(1);
-    }
   }
 }
 
-
+// ---------------------------------- Buttons ----------------------------------
 .btn-default {
   color: var(--nice-font-color);
   background: var(--nice-bg);
@@ -93,7 +72,7 @@
     background: #F3F3F3;
   }
 
-  &:active, &.active {
+  &:active, &.active, &:hover:active {
     background: #FBFBFB;
   }
 
@@ -102,25 +81,23 @@
   }
 }
 
-
 .btn-success {
   color: white;
   background: var(--nice-success-color);
   border-color: var(--nice-success-color);
 
   &:focus {
-    background: var(--nice-success-color);
+    background: var(--nice-success-color-darker);
   }
 
-  &:active, &.active {
-    background: var(--nice-success-color);
+  &:active, &.active, &:hover:active {
+    background: var(--nice-success-color-lighter);
   }
 
   &:hover {
-    background: var(--nice-success-color);
+    background: var(--nice-success-color-darker);
   }
 }
-
 
 .btn-danger {
   color: white;
@@ -128,18 +105,17 @@
   border-color: var(--nice-error-color);
 
   &:focus {
-    background: var(--nice-error-color);
+    background: var(--nice-error-color-darker);
   }
 
-  &:active, &.active {
-    background: var(--nice-error-color);
+  &:active, &.active, &:hover:active {
+    background: var(--nice-error-color-lighter);
   }
 
   &:hover {
-    background: var(--nice-error-color);
+    background: var(--nice-error-color-darker);
   }
 }
-
 
 .btn-info {
   color: white;
@@ -147,18 +123,17 @@
   border-color: var(--nice-info-color);
 
   &:focus {
-    background: var(--nice-info-color);
+    background: var(--nice-info-color-darker);
   }
 
-  &:active, &.active {
-    background: var(--nice-info-color);
+  &:active, &.active, &:hover:active {
+    background: var(--nice-info-color-lighter);
   }
 
   &:hover {
-    background: var(--nice-info-color);
+    background: var(--nice-info-color-darker);
   }
 }
-
 
 .btn-warning {
   color: white;
@@ -166,20 +141,20 @@
   border-color: var(--nice-warning-color);
 
   &:focus {
-    background: var(--nice-warning-color);
+    background: var(--nice-warning-color-darker);
+  }
+
+  &:active, &.active, &:hover:active {
+    background: var(--nice-warning-color-lighter);
   }
 
   &:hover {
-    background: var(--nice-warning-color);
-  }
-
-  &:active, &.active {
-    background: var(--nice-warning-color);
+    background: var(--nice-warning-color-darker);
   }
 }
 
 
-
+// ---------------------------------- Buttons outline ----------------------------------
 .btn-outline-default {
   color: var(--nice-font-color);
   background: transparent;
@@ -187,7 +162,11 @@
   svg { fill: var(--nice-font-color); }
   &:focus { background: var(--nice-bg-active); }
   &:hover { background: var(--nice-bg-hover); }
-  &:active, &.active { background: var(--nice-bg-active); }
+  &:active, &.active, &:hover:active { background: var(--nice-bg-active); }
+  // &:hover, &:active, &.active, &:hover:active {
+  //   color: white;
+  //   svg { fill: white; }
+  // }
 }
 
 .btn-outline-primary {
@@ -195,10 +174,11 @@
   background: transparent;
 
   svg { fill: var(--nice-base-color); }
-  &:focus { background: var(--nice-base-color); }
-  &:hover { background: var(--nice-base-color); }
-  &:active, &.active { background: var(--nice-base-color); }
-  &:hover, &:active, &.active, &:focus {
+  &:focus { color: var(--nice-base-color-darker); }
+  &:hover { background: var(--nice-base-color-darker); }
+  &:active, &.active, &:hover:active { background: var(--nice-base-color-lighter); }
+  &:hover, &:active, &.active, &:hover:active {
+    color: white;
     svg { fill: white; }
   }
 }
@@ -208,10 +188,11 @@
   background: transparent;
 
   svg { fill: var(--nice-success-color); }
-  &:focus { background: var(--nice-success-color); }
-  &:hover { background: var(--nice-success-color); }
-  &:active, &.active { background: var(--nice-success-color); }
-  &:hover, &:active, &.active, &:focus {
+  &:focus { color: var(--nice-success-color-darker); }
+  &:hover { background: var(--nice-success-color-darker); }
+  &:active, &.active, &:hover:active { background: var(--nice-success-color-lighter); }
+  &:hover, &:active, &.active, &:hover:active {
+    color: white;
     svg { fill: white; }
   }
 }
@@ -221,10 +202,11 @@
   background: transparent;
 
   svg { fill: var(--nice-error-color); }
-  &:focus { background: var(--nice-error-color); }
-  &:hover { background: var(--nice-error-color); }
-  &:active, &.active { background: var(--nice-error-color); }
-  &:hover, &:active, &.active, &:focus {
+  &:focus { color: var(--nice-error-color-darker); }
+  &:hover { background: var(--nice-error-color-darker); }
+  &:active, &.active, &:hover:active { background: var(--nice-error-color-lighter); }
+  &:hover, &:active, &.active, &:hover:active {
+    color: white;
     svg { fill: white; }
   }
 }
@@ -233,42 +215,46 @@
   color: var(--nice-info-color);
   background: transparent;
 
-  &:focus { background: var(--nice-info-color); }
-  &:hover { background: var(--nice-info-color); }
-  &:active, &.active { background: var(--nice-info-color); }
-  &:hover, &:active, &.active, &:focus {
+  &:focus { color: var(--nice-info-color-darker); }
+  &:hover { background: var(--nice-info-color-darker); }
+  &:active, &.active, &:hover:active { background: var(--nice-info-color-lighter); }
+  &:hover, &:active, &.active, &:hover:active {
+    color: white;
     svg { fill: white; }
   }
 }
-
 
 .btn-outline-warning {
   color: var(--nice-warning-color);
   background: transparent;
 
-  &:focus { background: var(--nice-warning-color); }
-  &:hover { background: var(--nice-warning-color); }
-  &:active, &.active { background: var(--nice-warning-color); }
-  &:hover, &:active, &.active, &:focus {
+  &:focus { color: var(--nice-warning-color-darker); }
+  &:hover { background: var(--nice-warning-color-darker); }
+  &:active, &.active, &:hover:active { background: var(--nice-warning-color-lighter); }
+  &:hover, &:active, &.active, &:hover:active {
+    color: white;
     svg { fill: white; }
   }
 }
 
 
-
+// ---------------------------------- Button block ----------------------------------
 .btn-block {
   width: 100%;
 }
 
-.btn-big {
-  padding: 1rem 2rem;
+
+// ---------------------------------- Button big ----------------------------------
+.btn-lg {
+  // padding: 1rem 2rem;
   font-size: 1.2em;
   border-radius: var(--nice-border-radius);
 }
 
+
+// ---------------------------------- Button sm ----------------------------------
 .btn-sm {
   font-size: 0.8em;
   line-height: 0;
   min-height: unset;
-  border-radius: 5px;
 }

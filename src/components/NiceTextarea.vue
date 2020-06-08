@@ -132,3 +132,10 @@ export default {
   }
 }
 </script>
+
+
+<style lang="scss" scoped>
+textarea {
+  border: 0 none;
+}
+</style>

@@ -1,9 +1,6 @@
 
 :root {
   --nice-height: 45px;
-  --nice-base-color: blue;
-  --nice-base-color-lighter: lightblue;
-  --nice-base-color-darker: darkblue;
   --nice-card: white;
   --nice-bg: #fafafa;
   --nice-bg-hover: #f3f3f3;
@@ -11,10 +8,25 @@
   --nice-bg-focus: #fafafa;
   --nice-border-color: #efefef;
   --nice-border: 1px solid var(--nice-border-color);
-  --nice-border-radius: 10px;
+  --nice-border-radius: 5px;
 
-  --nice-error-color: red;
-  --nice-success-color: green;
-  --nice-warning-color: rgb(202, 199, 0);
-  --nice-info-color: rgb(75, 75, 250);
+  --nice-base-color: blue;
+  --nice-base-color-lighter: lightblue;
+  --nice-base-color-darker: darkblue;
+
+  --nice-error-color: #f22e28;
+  --nice-error-color-lighter: #f34540;
+  --nice-error-color-darker: #f11710;
+
+  --nice-success-color: #49AE50;
+  --nice-success-color-lighter: #58b95e;
+  --nice-success-color-darker: #419c48;
+
+  --nice-warning-color: #ffc107;
+  --nice-warning-color-lighter: #ffc721;
+  --nice-warning-color-darker: #edb100;
+
+  --nice-info-color: #2727ea;
+  --nice-info-color-darker: #2121e6;
+  --nice-info-color-lighter: #4f4fe6;
 }
