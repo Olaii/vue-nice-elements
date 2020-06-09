@@ -1,4 +1,7 @@
-# Vue Nice elements
+# Nice elements for Vue.js
+
+![npm](https://img.shields.io/npm/dt/vue-nice-elements) [![npm version](https://badge.fury.io/js/vue-nice-elements.svg)](//npmjs.com/package/vue-nice-elements)
+
 
 ```js
 import NiceElements from'vue-nice-elements'
