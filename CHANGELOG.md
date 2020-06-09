@@ -1,6 +1,12 @@
 # Changelog
 
 
+## v0.1.5 (9.6.2020)
+- fixed nice dropdown null select, 
+- fixed nice dropdown simple null select, 
+- fixed button icons fro warning and info
+
+
 ## v0.1.4 (8.6.2020)
 - worked on buttons style
 
