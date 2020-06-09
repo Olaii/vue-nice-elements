@@ -215,6 +215,7 @@
   color: var(--nice-info-color);
   background: transparent;
 
+  svg { fill: var(--nice-info-color); }
   &:focus { color: var(--nice-info-color-darker); }
   &:hover { background: var(--nice-info-color-darker); }
   &:active, &.active, &:hover:active { background: var(--nice-info-color-lighter); }
@@ -228,6 +229,7 @@
   color: var(--nice-warning-color);
   background: transparent;
 
+  svg { fill: var(--nice-warning-color); }
   &:focus { color: var(--nice-warning-color-darker); }
   &:hover { background: var(--nice-warning-color-darker); }
   &:active, &.active, &:hover:active { background: var(--nice-warning-color-lighter); }

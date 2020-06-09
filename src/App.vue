@@ -3,86 +3,6 @@
     <h1>Nice Elements</h1>
 
 
-    <section>
-       <h4>Buttons</h4>
-
-       <div class="mb-2">
-        <div class="mr-1 btn btn-default">btn-default</div>
-        <div class="mr-1 btn btn-primary">btn-primary</div>
-        <div class="mr-1 btn btn-danger">btn-danger</div>
-        <div class="mr-1 btn btn-success">btn-success</div>
-        <div class="mr-1 btn btn-info">btn-info</div>
-        <div class="mr-1 btn btn-warning">btn-warning</div>
-      </div>
-
-      <div class="mb-2">
-        <div class="mr-1 btn btn-sm btn-default">btn-default btn-sm</div>
-        <div class="mr-1 btn btn-sm btn-primary">btn-primary btn-sm</div>
-        <div class="mr-1 btn btn-sm btn-danger">btn-danger btn-sm</div>
-        <div class="mr-1 btn btn-sm btn-success">btn-success btn-sm</div>
-        <div class="mr-1 btn btn-sm btn-info">btn-info btn-sm</div>
-        <div class="mr-1 btn btn-sm btn-warning">btn-warning btn-sm</div>
-      </div>
-
-      <div class="mb-2">
-        <div class="mr-1 btn btn-lg btn-default">btn-default btn-lg</div>
-        <div class="mr-1 btn btn-lg btn-primary">btn-primary btn-lg</div>
-        <div class="mr-1 btn btn-lg btn-danger">btn-danger btn-lg</div>
-        <div class="mr-1 btn btn-lg btn-success">btn-success btn-lg</div>
-        <div class="mr-1 btn btn-lg btn-info">btn-info btn-lg</div>
-        <div class="mr-1 btn btn-lg btn-warning">btn-warning btn-lg</div>
-      </div>
-
-      <div class="mb-2">
-        <button class="mr-1 btn btn-default" disabled>btn-default</button>
-        <button class="mr-1 btn btn-primary" disabled>btn-primary</button>
-        <button class="mr-1 btn btn-danger" disabled>btn-danger</button>
-        <button class="mr-1 btn btn-success" disabled>btn-success</button>
-        <button class="mr-1 btn btn-info" disabled>btn-info</button>
-        <button class="mr-1 btn btn-warning" disabled>btn-warning</button>
-      </div>
-
-      <div class="mb-2">
-        <div class="mr-1 btn btn-outline-default">btn-outline-default</div>
-        <div class="mr-1 btn btn-outline-primary">btn-outline-primary</div>
-        <div class="mr-1 btn btn-outline-danger">btn-outline-danger</div>
-        <div class="mr-1 btn btn-outline-success">btn-outline-success</div>
-        <div class="mr-1 btn btn-outline-info">btn-outline-info</div>
-        <div class="mr-1 btn btn-outline-warning">btn-outline-warning</div>
-      </div>
-
-      <div class="mb-2">
-        <div class="mr-1 btn btn-sm btn-outline-default">btn-outline-default btn-sm</div>
-        <div class="mr-1 btn btn-sm btn-outline-primary">btn-outline-primary btn-sm</div>
-        <div class="mr-1 btn btn-sm btn-outline-danger">btn-outline-danger btn-sm</div>
-        <div class="mr-1 btn btn-sm btn-outline-success">btn-outline-success btn-sm</div>
-        <div class="mr-1 btn btn-sm btn-outline-info">btn-outline-info btn-sm</div>
-        <div class="mr-1 btn btn-sm btn-outline-warning">btn-outline-warning btn-sm</div>
-      </div>
-
-      <div class="mb-2">
-        <div class="mr-1 btn btn-lg btn-outline-default">btn-outline-default btn-lg</div>
-        <div class="mr-1 btn btn-lg btn-outline-primary">btn-outline-primary btn-lg</div>
-        <div class="mr-1 btn btn-lg btn-outline-danger">btn-outline-danger btn-lg</div>
-        <div class="mr-1 btn btn-lg btn-outline-success">btn-outline-success btn-lg</div>
-        <div class="mr-1 btn btn-lg btn-outline-info">btn-outline-info btn-lg</div>
-        <div class="mr-1 btn btn-lg btn-outline-warning">btn-outline-warning btn-lg</div>
-      </div>
-
-      <div class="mb-2">
-        <button class="mr-1 btn btn-outline-default" disabled>btn-outline-default</button>
-        <button class="mr-1 btn btn-outline-primary" disabled>btn-outline-primary</button>
-        <button class="mr-1 btn btn-outline-danger" disabled>btn-outline-danger</button>
-        <button class="mr-1 btn btn-outline-success" disabled>btn-outline-success</button>
-        <button class="mr-1 btn btn-outline-info" disabled>btn-outline-info</button>
-        <button class="mr-1 btn btn-outline-warning" disabled>btn-outline-warning</button>
-      </div>
-
-    </section>
-    
-    <hr />
-
-
     <!------------- Nice notifications ------------->
     <section>
       <h4>Nice notifications</h4>
@@ -288,9 +208,9 @@ valueName: {
 }
     </pre>
 
-    <pre>&lt;NiceDropdownSimple title="Nice dropdown" v-model="dropdownValue" :values="dropdownValues" /></pre>
+    <pre>&lt;NiceDropdownSimple title="Nice dropdown" v-model="dropdownValue" :values="dropdownValues" :nullable="true" :addFunction="addFunction" /></pre>
 
-    <NiceDropdownSimple title="Nice dropdown" v-model="dropdownValue" :values="dropdownValues" />
+    <NiceDropdownSimple title="Nice dropdown simple" v-model="dropdownValue" :values="dropdownValues" :nullable="true" :addFunction="addFunction" />
 
     <hr />
 
@@ -327,9 +247,10 @@ valueName: {
   default: "value"
 }</pre>
 
-    <pre>&lt;NiceDropdown title="Nice dropdown 2" v-model="dropdownValue" :searchFunction="getDropdownValues" /></pre>
+    <pre>&lt;NiceDropdown title="Nice dropdown" v-model="dropdownValue" :searchFunction="getDropdownValues" /></pre>
 
-    <NiceDropdown title="Nice dropdown 2" v-model="dropdownValue" :searchFunction="getDropdownValues" />
+    <NiceDropdown title="Nice dropdown (nullable)" v-model="dropdownValue" :searchFunction="getDropdownValues" :nullable="true" />
+    <NiceDropdown title="Nice dropdown" v-model="dropdownValue2" :searchFunction="getDropdownValues" :addFunction="addFunction" />
   
     <hr />
 
@@ -507,6 +428,92 @@ disabled: Boolean</pre>
     </div> -->
 
 
+    <!----------------------------------------------------------------- Buttons ------------------------------------------------------------------------------>
+    <section>
+       <h4>Buttons</h4>
+
+       <svg style="display:none;">
+         <symbol id="icon-file-text" viewBox="0 0 24 24">
+          <path d="M17.586 7h-2.586v-2.586zM20.703 7.289l-5.996-5.996c-0.001-0.001-0.003-0.002-0.004-0.004-0.095-0.094-0.204-0.165-0.32-0.213-0.122-0.051-0.253-0.076-0.383-0.076h-8c-0.405 0-0.793 0.081-1.148 0.228-0.367 0.152-0.697 0.375-0.973 0.651s-0.499 0.606-0.651 0.973c-0.147 0.355-0.228 0.743-0.228 1.148v16c0 0.405 0.081 0.793 0.228 1.148 0.152 0.368 0.375 0.698 0.651 0.974s0.606 0.499 0.974 0.651c0.354 0.146 0.742 0.227 1.147 0.227h12c0.405 0 0.793-0.081 1.148-0.228 0.368-0.152 0.698-0.375 0.974-0.651s0.499-0.606 0.651-0.974c0.146-0.354 0.227-0.742 0.227-1.147v-12c0-0.276-0.112-0.526-0.293-0.707zM13 3v5c0 0.552 0.448 1 1 1h5v11c0 0.137-0.027 0.266-0.075 0.382-0.050 0.122-0.125 0.232-0.218 0.325s-0.203 0.167-0.325 0.218c-0.116 0.048-0.245 0.075-0.382 0.075h-12c-0.137 0-0.266-0.027-0.382-0.075-0.122-0.050-0.232-0.125-0.325-0.218s-0.167-0.203-0.218-0.325c-0.048-0.116-0.075-0.245-0.075-0.382v-16c0-0.137 0.027-0.266 0.075-0.382 0.050-0.122 0.125-0.232 0.218-0.325s0.203-0.167 0.325-0.218c0.116-0.048 0.245-0.075 0.382-0.075zM16 12h-8c-0.552 0-1 0.448-1 1s0.448 1 1 1h8c0.552 0 1-0.448 1-1s-0.448-1-1-1zM16 16h-8c-0.552 0-1 0.448-1 1s0.448 1 1 1h8c0.552 0 1-0.448 1-1s-0.448-1-1-1zM10 8h-2c-0.552 0-1 0.448-1 1s0.448 1 1 1h2c0.552 0 1-0.448 1-1s-0.448-1-1-1z"></path>
+        </symbol>
+       </svg>
+
+       <div class="mb-2">
+        <div class="mr-1 btn btn-default">btn-default <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-primary">btn-primary <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-danger">btn-danger <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-success">btn-success <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-info">btn-info <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-warning">btn-warning <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+      </div>
+
+      <div class="mb-2">
+        <div class="mr-1 btn btn-sm btn-default">btn-default btn-sm <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-sm btn-primary">btn-primary btn-sm <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-sm btn-danger">btn-danger btn-sm <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-sm btn-success">btn-success btn-sm <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-sm btn-info">btn-info btn-sm <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-sm btn-warning">btn-warning btn-sm <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+      </div>
+
+      <div class="mb-2">
+        <div class="mr-1 btn btn-lg btn-default">btn-default btn-lg <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-lg btn-primary">btn-primary btn-lg <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-lg btn-danger">btn-danger btn-lg <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-lg btn-success">btn-success btn-lg <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-lg btn-info">btn-info btn-lg <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-lg btn-warning">btn-warning btn-lg <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+      </div>
+
+      <div class="mb-2">
+        <button class="mr-1 btn btn-default" disabled>btn-default <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></button>
+        <button class="mr-1 btn btn-primary" disabled>btn-primary <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></button>
+        <button class="mr-1 btn btn-danger" disabled>btn-danger <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></button>
+        <button class="mr-1 btn btn-success" disabled>btn-success <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></button>
+        <button class="mr-1 btn btn-info" disabled>btn-info <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></button>
+        <button class="mr-1 btn btn-warning" disabled>btn-warning <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></button>
+      </div>
+
+      <div class="mb-2">
+        <div class="mr-1 btn btn-outline-default">btn-outline-default <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-outline-primary">btn-outline-primary <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-outline-danger">btn-outline-danger <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-outline-success">btn-outline-success <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-outline-info">btn-outline-info <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-outline-warning">btn-outline-warning <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+      </div>
+
+      <div class="mb-2">
+        <div class="mr-1 btn btn-sm btn-outline-default">btn-outline-default btn-sm <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-sm btn-outline-primary">btn-outline-primary btn-sm <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-sm btn-outline-danger">btn-outline-danger btn-sm <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-sm btn-outline-success">btn-outline-success btn-sm <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-sm btn-outline-info">btn-outline-info btn-sm <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-sm btn-outline-warning">btn-outline-warning btn-sm <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+      </div>
+
+      <div class="mb-2">
+        <div class="mr-1 btn btn-lg btn-outline-default">btn-outline-default btn-lg <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-lg btn-outline-primary">btn-outline-primary btn-lg <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-lg btn-outline-danger">btn-outline-danger btn-lg <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-lg btn-outline-success">btn-outline-success btn-lg <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-lg btn-outline-info">btn-outline-info btn-lg <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+        <div class="mr-1 btn btn-lg btn-outline-warning">btn-outline-warning btn-lg <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></div>
+      </div>
+
+      <div class="mb-2">
+        <button class="mr-1 btn btn-outline-default" disabled>btn-outline-default <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></button>
+        <button class="mr-1 btn btn-outline-primary" disabled>btn-outline-primary <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></button>
+        <button class="mr-1 btn btn-outline-danger" disabled>btn-outline-danger <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></button>
+        <button class="mr-1 btn btn-outline-success" disabled>btn-outline-success <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></button>
+        <button class="mr-1 btn btn-outline-info" disabled>btn-outline-info <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></button>
+        <button class="mr-1 btn btn-outline-warning" disabled>btn-outline-warning <svg class="icon ml-1 icon-file-text"><use xlink:href="#icon-file-text"></use></svg></button>
+      </div>
+
+    </section>
+    
+    <hr />
+
   </div>
 </template>
 
@@ -526,6 +533,7 @@ export default {
         { id: 2, key: 2, value: "Value 2" },
       ],
       dropdownValue: null,
+      dropdownValue2: null,
       colorValue: null,
       dateValue: null,
       inputValue: "This is a test",
@@ -540,7 +548,13 @@ export default {
 
   methods: {
     async getDropdownValues () {
-      return this.dropdownValues
+      const sleep = m => new Promise(r => setTimeout(r, m));
+      await sleep(500);
+      return this.dropdownValues;
+    },
+
+    async addFunction () {
+      this.testToast();
     },
 
     toggleLoading () {
@@ -554,6 +568,7 @@ export default {
     testToast () {
       this.$events.$emit('nice-toast', this.toastMessage);
     }
+    
   },
 
 
@@ -587,6 +602,10 @@ h1 {
 
 .mr-1 {
   margin-right: 0.5rem;
+}
+
+.ml-1 {
+  margin-left: 0.5rem !important;
 }
 
 .mb-2 {

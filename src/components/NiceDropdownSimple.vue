@@ -1,5 +1,5 @@
 <template>
-  <div class="nice-component nice-dropdown" :class="{ 'disabled': disabled, 'no-margin': noMargin }">
+  <div class="nice-component nice-dropdown-simple" :class="{ 'disabled': disabled, 'no-margin': noMargin }">
     <div class="nice-label" v-if="title">{{ title }}<span v-if="required">*</span></div>
     <div class="input-group">
       <div class="select-wrapper" :class="{ 'no-value': value == null }">
@@ -61,9 +61,13 @@ export default {
 
   methods: {
     handleChange (e) {
-      let selected = this.values.find(item => { return item[this.keyName] == e.target.value })
-      if (selected) {
-        this.changeValue(selected)
+      if (e.target.value) {
+        let selected = this.values.find(item => { return item[this.keyName] == e.target.value })
+        if (selected) {
+          this.changeValue(selected)
+        } else {
+          this.changeValue(undefined)
+        }
       } else {
         this.changeValue(undefined)
       }
@@ -120,7 +124,7 @@ export default {
 
 
 <style lang="scss" scoped>
-.nice-dropdown {
+.nice-dropdown-simple {
   .input-group {
     margin-bottom: 0;
     display: flex;
@@ -128,9 +132,13 @@ export default {
     .select-wrapper {
       flex-grow: 1;
 
+      select {
+        padding: .4rem 1rem;
+      }
+
       &.no-value {
         select {
-          // color: #ccc !important;
+          color: #ccc;
         }
       }
     }

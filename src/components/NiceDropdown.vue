@@ -8,8 +8,8 @@
           <div class="option" v-if="!loading && value">
             <slot name="selected-option" :item="value">{{ value[valueName] }}</slot>
           </div>
-          <div class="no-options" v-if="!nullable && !loading && !value && (!innerValues || innerValues.length == 0) && !required">No options</div>
-          <div class="no-options" v-if="!nullable && !loading && !value">Not Selected</div>
+          <div class="no-options" v-if="!nullable && !loading && (!innerValues || innerValues.length == 0) && !required">No options</div>
+          <div class="no-options" v-if="nullable && !loading && !value">None</div>
           <div class="no-options" v-if="loading">Loading</div>
           <div class="arrow-down"></div>
         </div>
@@ -21,7 +21,7 @@
             <div class="loading" v-if="innerLoading"><NiceLoading :size="30" /></div>
           </div>
           <div class="options">
-            <div class="option" v-if="nullable" :value="null" :selected="!value">{{ nullText }}</div>
+            <div class="option null-value" v-if="nullable" :value="null" :selected="!value" @click="handleChange(null)">{{ nullText }}</div>
             <div class="option" v-for="(item, index) in innerValues" :key="item[keyName]" :class="{ 'hover': innerIndex == index, 'selected': value && item[keyName] == value[keyName] }" @click="handleChange(item)">
               <slot name="option" :item="item">{{ item[valueName] }}</slot>
             </div>
@@ -43,7 +43,7 @@
 
 <script>
 export default {
-  name: "NiceDropdown2",
+  name: "NiceDropdown",
   
   props: {
     value: [Object, String, Number],
@@ -54,6 +54,7 @@ export default {
     disabled: Boolean,
     loading: Boolean,
     keyOnly: Boolean,
+    resetOnSelect: Boolean,
     searchFunction: {
       type: Function,
       default: null
@@ -100,17 +101,25 @@ export default {
     },
 
     handleChange (item) {
-      let value = item[this.keyName]
-      let selected = this.innerValues.find(item => { return item[this.keyName] == value })
-      if (selected) {
-        this.changeValue(selected)
+      if (item) {
+        let value = item[this.keyName]
+        let selected = this.innerValues.find(item => { return item[this.keyName] == value })
+        if (selected) {
+          this.changeValue(selected)
+        } else {
+          this.changeValue(undefined)
+        }
       } else {
         this.changeValue(undefined)
       }
       this.isOpen = false
     },
 
-    handleDefault () {
+    async handleDefault () {
+      if (this.nullable) {
+        await this.searchFunction();
+      }
+
       // Select default value
       if (this.innerValues && this.innerValues.length > 0 && !this.nullable) {
         this.changeValue(this.innerValues[0])
@@ -130,13 +139,20 @@ export default {
         this.$emit('input', undefined)
         this.$emit('changed', undefined)
       }
+
+      if (this.resetOnSelect) {
+        this.$emit('input', undefined)
+        this.$emit('changed', undefined)
+      }
     },
 
     handleSearch () {
-      clearTimeout(this.debounceTimeout);
-      return this.debounceTimeout = setTimeout(async () => {
-        this.innerValues = await this.fetchSearch()
-      }, this.debounce)
+      if (this.searchFunction) {
+        clearTimeout(this.debounceTimeout);
+        return this.debounceTimeout = setTimeout(async () => {
+          this.innerValues = await this.fetchSearch()
+        }, this.debounce)
+      }
     },
 
     async fetchSearch () {
@@ -171,6 +187,13 @@ export default {
         e.preventDefault()
       }
     }
+  },
+
+  async mounted() {
+    // Fetch default items
+      if (!this.innerValues) {
+        this.innerValues = await this.fetchSearch()
+      }
   },
 
   watch: {
@@ -227,6 +250,7 @@ export default {
       background: transparent;
       height: auto;
       opacity: 0;
+      display: none;
     }
 
     .arrow-down {
