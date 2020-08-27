@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.6 (27.8.2020)
+- added better support for dark theme,
+- added position for toasts,
+- added types for toasts,
+- added position for notifications
+
 
 ## v0.1.5 (9.6.2020)
 - fixed nice dropdown null select, 
