@@ -56,7 +56,7 @@ export default {
     margin: 0;
     margin-top: 0.3rem;
     font-size: 0.8em;
-    color: var(--font-color);
+    color: var(--nice-font-color);
     opacity: 0.3;
     font-weight: bold;
   }

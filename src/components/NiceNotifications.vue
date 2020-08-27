@@ -1,5 +1,5 @@
 <template>
-  <div class="nice-notifications-wrapper">
+  <div class="nice-notifications-wrapper" :class="positions[position]">
     <transition-group name="notification" class="nice-notifications" tag="div">
       <div v-for="notification in notifications" :key="notification.id" class="nice-notification" :class="notification.type">
         <label>{{ notification.title }}</label>
@@ -26,10 +26,24 @@ export default {
         "SUCCESS": "Success",
         "INFO": "Info",
         "WARNING": "Warning"
-      }
+      },
+      positions: {
+        "TOP": "top center",
+        "TOP_LEFT": "top left",
+        "TOP_RIGHT": "top right",
+        "BOTTOM": "bottom center",
+        "BOTTOM_LEFT": "bottom left",
+        "BOTTOM_RIGHT": "bottom right",
+      },
     }
   },
 
+  props: {
+    position: {
+      default: "TOP_RIGHT",
+      type: String
+    }
+  },
 
   mounted () {
     this.$events.$on(this.eventName, (type, message, title) => {
@@ -90,7 +104,42 @@ export default {
   z-index: 99999;
   position: fixed;
   top: 0;
-  right: 0;
+  right: 50%;
+  transform: translateX(50%);
+
+  &.bottom {
+    top: unset;
+    bottom: 0;
+  }
+
+  &.top {
+    top: 0;
+    bottom: unset;
+    flex-direction: column-reverse;
+  }
+
+  &.left {
+    right: unset;
+    left: 0;
+    transform: unset;
+    .notification-enter-active, .notification-leave-active {
+      animation-name: bounce-in-left;
+    }
+  }
+  
+  &.right {
+    right: 0;
+    transform: unset;
+  }
+
+  &.center {
+    &.top {
+      .notification-enter-active, .notification-leave-active { animation-name: bounce-in-center-top; }
+    }
+    &.bottom {
+      .notification-enter-active, .notification-leave-active { animation-name: bounce-in-center-bottom; }
+    }
+  }
 
   .nice-notifications {
     max-height: 100vh;
@@ -144,15 +193,30 @@ export default {
 }
 
 .notification-enter-active {
-  animation: bounce-in .5s;
+  animation: bounce-in-right .5s;
 }
 
 .notification-leave-active {
-  animation: bounce-in .5s reverse;
+  animation: bounce-in-right .5s reverse;
 }
 
-@keyframes bounce-in {
+@keyframes bounce-in-center-bottom {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes bounce-in-center-top {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes bounce-in-right {
   from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes bounce-in-left {
+  from { transform: translateX(-100%); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
 </style>

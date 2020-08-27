@@ -105,7 +105,7 @@ export default {
     width: var(--side-view-width);
     max-width: 90%;
     height: 100vh;
-    background: white;
+    background: var(--nice-bg);
     padding: 3rem;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
     z-index: 2;

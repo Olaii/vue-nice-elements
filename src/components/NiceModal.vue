@@ -68,8 +68,8 @@ export default {
     transform: translateX(-50%);
     max-width: 100%;
     max-height: 90vh;
-    color: var(--font-color);
-    background: white;
+    color: var(--nice-font-color);
+    background: var(--nice-bg);
     padding: 3rem;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
     z-index: 2;

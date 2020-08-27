@@ -94,7 +94,7 @@ export default {
       right: 1rem;
       transform: translateY(-50%);
       height: 20px;
-      fill: var(--font-color);
+      fill: var(--nice-font-color);
     }
   }
 }

@@ -59,7 +59,7 @@ export default {
   height: var(--height);
   line-height: var(--height);
   font-size: 0.6em;
-  color: var(--font-color);
+  color: var(--nice-font-color);
   text-align: center;
 
   .text {

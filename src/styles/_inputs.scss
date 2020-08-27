@@ -26,6 +26,7 @@
     border: var(--nice-border);
     font-family: inherit;
     min-height: var(--nice-height);
+    color: var(--nice-font-color);
 
     &:focus {
       outline: 0;
@@ -42,7 +43,7 @@
   }
 
   // rgba(0,0,0,0.3);
-  --placeholder-color: var(--font-color);
+  --placeholder-color: var(--nice-font-color);
 
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: var(--placeholder-color);

@@ -65,6 +65,7 @@ export default {
 <style lang="scss" scoped>
 .nice-actions {
   position: relative;
+  display: inline-block;
 
   .nice-dropdown {
     z-index: 1000;
@@ -77,17 +78,18 @@ export default {
     min-width: 220px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: var(--nice-border-radius);
+    list-style: none;
 
     &:before {
       content: " ";
       position: absolute;
-      top: -0.8rem;
+      top: -0.7rem;
       right: 0.9rem;
       width: 0;
       height: 0;
       border-style: solid;
-      border-width: 0 0.8rem 0.8rem 0.8rem;
-      border-color: transparent transparent white transparent;
+      border-width: 0 0.7rem 0.7rem 0.7rem;
+      border-color: transparent transparent var(--nice-card) transparent;
     }
 
     li {

@@ -3,8 +3,75 @@
     <h1>Nice Elements</h1>
 
 
+
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#notifications">Notifications</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#toast">Toast</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#modal">Modal</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#sideview">Sideview</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#color">Color</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#input">Input</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#button">Button</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-block btn-default" href="#date">Date</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#dropdown">Dropdown</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#dropdown-simple">Dropdown simple</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#file">File</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#progress">Progress</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#progress-circle">Progress circle</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#search">Search</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#text">Text</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#textarea">Textarea</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#toggle">Toggle</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#actions">Actions</a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#buttons">Buttons</a>
+      </li>
+    </ul>
+
+
+
+    <NiceToggle title="Dark mode" v-model="darkMode" @changed="darkModeChanged" style="width: 250px;" />
+
+    <hr />
+
     <!------------- Nice notifications ------------->
-    <section>
+    <section id="notifications">
       <h4>Nice notifications</h4>
 
       <pre>this.$events.$emit('nice-notification', 'ERROR', 'This is the message', 'This is the title');
@@ -14,7 +81,7 @@ this.$events.$emit('nice-notification', 'INFO', 'This is the message', 'This is 
 
       <pre>&lt;NiceNotifications /></pre>
 
-      <NiceNotifications />
+      <NiceNotifications :position="notificationsPosition" />
 
       <NiceInput title="Notification title" v-model="notificationTitle" />
       <NiceInput title="Notification message" v-model="notificationMessage" />
@@ -23,6 +90,16 @@ this.$events.$emit('nice-notification', 'INFO', 'This is the message', 'This is 
       <NiceButton text="Success" @click="testNotification('SUCCESS')" class="mr-1 btn-success" />
       <NiceButton text="Info" @click="testNotification('INFO')" class="mr-1 btn-info" />
       <NiceButton text="Warning" @click="testNotification('WARNING')" class="btn-warning" />
+
+      <br />
+      <br />
+
+      <NiceButton text="Bottom" class="mr-1 btn-default btn-sm" @click="notificationsPosition = 'BOTTOM'" />
+      <NiceButton text="Bottom left" class="mr-1 btn-default btn-sm" @click="notificationsPosition = 'BOTTOM_LEFT'" />
+      <NiceButton text="Bottom right" class="mr-1 btn-default btn-sm" @click="notificationsPosition = 'BOTTOM_RIGHT'" />      
+      <NiceButton text="Top" class="mr-1 btn-default btn-sm" @click="notificationsPosition = 'TOP'" />
+      <NiceButton text="Top left" class="mr-1 btn-default btn-sm" @click="notificationsPosition = 'TOP_LEFT'" />
+      <NiceButton text="Top right" class="mr-1 btn-default btn-sm" @click="notificationsPosition = 'TOP_RIGHT'" />
     </section>
 
 
@@ -30,24 +107,38 @@ this.$events.$emit('nice-notification', 'INFO', 'This is the message', 'This is 
 
 
     <!------------- Nice toast ------------->
-    <section>
+    <section id="toast">
       <h4>Nice toast</h4>
 
       <pre>this.$events.$emit('nice-toast', 'This is the message')</pre>
 
       <pre>&lt;NiceToast /></pre>
 
-      <NiceToast />
+      <NiceToast :position="toastsPosition" />
       
       <NiceInput title="Toast message" v-model="toastMessage" />
-      <NiceButton text="Toast me" @click="testToast" />
+      <NiceButton text="Toast me" class="mr-1 btn-default" @click="testToast" />
+      <NiceButton text="Toast error" class="mr-1 btn-danger" @click="testToast('error')" />
+      <NiceButton text="Toast success" class="mr-1 btn-success" @click="testToast('success')" />
+      <NiceButton text="Toast warning" class="mr-1 btn-warning" @click="testToast('warning')" />
+      <NiceButton text="Toast info" class="btn-info" @click="testToast('info')" />
+
+      <br />
+      <br />
+
+      <NiceButton text="Bottom" class="mr-1 btn-default btn-sm" @click="toastsPosition = 'BOTTOM'" />
+      <NiceButton text="Bottom left" class="mr-1 btn-default btn-sm" @click="toastsPosition = 'BOTTOM_LEFT'" />
+      <NiceButton text="Bottom right" class="mr-1 btn-default btn-sm" @click="toastsPosition = 'BOTTOM_RIGHT'" />      
+      <NiceButton text="Top" class="mr-1 btn-default btn-sm" @click="toastsPosition = 'TOP'" />
+      <NiceButton text="Top left" class="mr-1 btn-default btn-sm" @click="toastsPosition = 'TOP_LEFT'" />
+      <NiceButton text="Top right" class="mr-1 btn-default btn-sm" @click="toastsPosition = 'TOP_RIGHT'" />
     </section>
 
     <hr />
 
 
     <!------------- Nice modal ------------->
-    <section>
+    <section id="modal">
       <h4>Nice modal</h4>
 
       <pre>&lt;NiceModal :isOpen="modalValue" @close="modalValue = false">
@@ -65,7 +156,7 @@ this.$events.$emit('nice-notification', 'INFO', 'This is the message', 'This is 
 
 
     <!------------- Nice sideview ------------->
-    <section>
+    <section id="sideview">
       <h4>Nice sideview</h4>
 
       <pre>&lt;NiceSideview :isOpen="modalValue" @close="modalValue = false">
@@ -83,7 +174,7 @@ this.$events.$emit('nice-notification', 'INFO', 'This is the message', 'This is 
 
 
     <!------------- Nice color ------------->
-    <section>
+    <section id="color">
       <h4>Nice color</h4>
       <pre>
 value: String,
@@ -104,7 +195,7 @@ noMargin: Boolean</pre>
 
 
     <!------------- Nice input ------------->
-    <section>
+    <section id="input">
       <h4>Nice Input</h4>
       <pre>
 value: [String, Number],
@@ -134,7 +225,7 @@ noMargin: Boolean</pre>
 
 
     <!------------- Nice button ------------->
-    <section>
+    <section id="button">
       <h4>Nice Button</h4>
       <pre>
 text: String,
@@ -155,7 +246,7 @@ function: Function</pre>
     <hr />
 
     <!------------- Nice date ------------->
-    <section>
+    <section id="date">
       <h4>Nice Date</h4>
       <pre>
 value: [String, Date],
@@ -175,12 +266,14 @@ time: {
       <NiceDate title="Nice date" placeholder="Select date" v-model="dateValue" />
     </section>
 
+
     <hr />
 
 
     <!------------- Nice dropdown simple ------------->
-    <h4>Nice Dropdown simple</h4>
-    <pre>
+    <section id="dropdown-simple">
+      <h4>Nice Dropdown simple</h4>
+      <pre>
 value: [Object, String, Number],
 values: Array,
 title: String,
@@ -206,18 +299,20 @@ valueName: {
   type: String,
   default: "value"
 }
-    </pre>
+      </pre>
 
-    <pre>&lt;NiceDropdownSimple title="Nice dropdown" v-model="dropdownValue" :values="dropdownValues" :nullable="true" :addFunction="addFunction" /></pre>
+      <pre>&lt;NiceDropdownSimple title="Nice dropdown" v-model="dropdownValue" :values="dropdownValues" :nullable="true" :addFunction="addFunction" /></pre>
 
-    <NiceDropdownSimple title="Nice dropdown simple" v-model="dropdownValue" :values="dropdownValues" :nullable="true" :addFunction="addFunction" />
-
+      <NiceDropdownSimple title="Nice dropdown simple" v-model="dropdownValue" :values="dropdownValues" :nullable="true" :addFunction="addFunction" />
+    </section>
+    
     <hr />
 
 
     <!------------- Nice dropdown ------------->
-    <h4>Nice Dropdown</h4>
-    <pre>
+    <section id="dropdown">
+      <h4>Nice Dropdown</h4>
+      <pre>
 value: [Object, String, Number],
 title: String,
 noMargin: Boolean,
@@ -247,26 +342,30 @@ valueName: {
   default: "value"
 }</pre>
 
-    <pre>&lt;NiceDropdown title="Nice dropdown" v-model="dropdownValue" :searchFunction="getDropdownValues" /></pre>
+      <pre>&lt;NiceDropdown title="Nice dropdown" v-model="dropdownValue" :searchFunction="getDropdownValues" /></pre>
 
-    <NiceDropdown title="Nice dropdown (nullable)" v-model="dropdownValue" :searchFunction="getDropdownValues" :nullable="true" />
-    <NiceDropdown title="Nice dropdown" v-model="dropdownValue2" :searchFunction="getDropdownValues" :addFunction="addFunction" />
-  
+      <NiceDropdown title="Nice dropdown (nullable)" v-model="dropdownValue" :searchFunction="getDropdownValues" :nullable="true" />
+      <NiceDropdown title="Nice dropdown" v-model="dropdownValue2" :searchFunction="getDropdownValues" :addFunction="addFunction" />
+    </section>
+
+
     <hr />
 
 
     <!------------- Nice file ------------->
-    <h4>Nice File</h4>
-    <pre>
+    <section id="file">
+      <h4>Nice File</h4>
+      <pre>
 title: String,
 required: Boolean,
 disabled: Boolean,
 noMargin: Boolean,
 canEdit: Boolean</pre>
 
-    <pre>&lt;NiceFile title="Nice file" /></pre>
+      <pre>&lt;NiceFile title="Nice file" /></pre>
 
-    <NiceFile title="Nice file" />
+      <NiceFile title="Nice file" />
+    </section>
 
     <hr />
 
@@ -282,7 +381,7 @@ text: String
 
 
     <!------------- Nice progress ------------->
-    <section>
+    <section id="progress">
       <h4>Nice Progress</h4>
       <pre>
 amount: {
@@ -303,7 +402,7 @@ total: {
 
 
     <!------------- Nice progress circle ------------->
-    <section>
+    <section id="progress-circle">
       <h4>Nice Progress Circle</h4>
       <pre>
 amount: {
@@ -324,7 +423,7 @@ total: {
 
 
     <!------------- Nice search ------------->
-    <section>
+    <section id="search">
       <h4>Nice Search</h4>
       <pre>
 title: String,
@@ -345,7 +444,7 @@ debounce: {
 
 
     <!------------- Nice text ------------->
-    <section>
+    <section id="text">
       <h4>Nice Text</h4>
       <pre>
 title: String,
@@ -361,7 +460,7 @@ noMargin: Boolean</pre>
 
 
     <!------------- Nice textareat ------------->
-    <section>
+    <section id="textarea">
       <h4>Nice Textarea</h4>
       <pre>
 value: {
@@ -394,8 +493,8 @@ important: {
 
 
     <!------------- Nice toggle ------------->
-    <h4>Nice Toggle</h4>
-    <div>
+    <section id="toggle">
+      <h4>Nice Toggle</h4>
       <pre>
 value: [Boolean],
 title: String,
@@ -414,22 +513,65 @@ disabled: Boolean</pre>
       <pre>&lt;NiceToggle title="Nice toggle" /></pre>
 
       <NiceToggle title="Nice toggle" />
-    </div>
+    </section>
   
     <hr />
 
 
-    <!------------- Nice actions ------------->
-    <!-- <h4>Nice Actions</h4>
-    <div>
-      <pre>
-      </pre>
-      <NiceActions title="Nice toggle" />
-    </div> -->
+    <!----------- Nice actions ------------->
+    <section id="actions">
+      <h4>Nice Actions</h4>
+      <pre>&lt;NiceActions>
+  &lt;template slot="dropdown">
+    &lt;li>
+      &lt;NiceButton addClass="btn-block">
+        &lt;span>{{ 'Send email' }}&lt;/span>
+      &lt;/NiceButton>
+    &lt;/li>
 
+    &lt;li>
+      &lt;NiceButton addClass="btn-block">
+        &lt;span>{{ 'Export attendees' }}&lt;/span>
+      &lt;/NiceButton>
+    &lt;/li>
+
+    &lt;li>
+      &lt;NiceButton addClass="btn-block">
+        &lt;span>{{ 'Import attendees' }}&lt;/span>
+      &lt;/NiceButton>
+    &lt;/li>
+  &lt;/template>
+&lt;/NiceActions></pre>
+
+      <div class="text-right">
+        <NiceActions>
+          <template slot="dropdown">
+            <li>
+              <NiceButton addClass="btn-block">
+                <span>{{ 'Send email' }}</span>
+              </NiceButton>
+            </li>
+
+            <li>
+              <NiceButton addClass="btn-block">
+                <span>{{ 'Export attendees' }}</span>
+              </NiceButton>
+            </li>
+
+            <li>
+              <NiceButton addClass="btn-block">
+                <span>{{ 'Import attendees' }}</span>
+              </NiceButton>
+            </li>
+          </template>
+        </NiceActions>
+      </div>
+    </section>
+
+    <hr />
 
     <!----------------------------------------------------------------- Buttons ------------------------------------------------------------------------------>
-    <section>
+    <section id="buttons">
        <h4>Buttons</h4>
 
        <svg style="display:none;">
@@ -541,7 +683,10 @@ export default {
       notificationTitle: "Title",
       notificationMessage: "This is a test notification message",
       modalValue: false,
-      sideviewValue: false
+      sideviewValue: false,
+      darkMode: false,
+      toastsPosition: "BOTTOM",
+      notificationsPosition: "TOP_RIGHT"
     }
   },
   
@@ -565,10 +710,17 @@ export default {
       this.$events.$emit('nice-notification', type, this.notificationMessage, this.notificationTitle);
     },
 
-    testToast () {
-      this.$events.$emit('nice-toast', this.toastMessage);
+    testToast (type) {
+      this.$events.$emit('nice-toast', this.toastMessage, type);
+    },    
+
+    darkModeChanged () {
+      if (this.darkMode) {
+        document.body.className = "dark";
+      } else {
+        document.body.className = "";
+      }
     }
-    
   },
 
 
@@ -584,20 +736,46 @@ export default {
 
 <style lang="scss" scope>
 @import "./styles/main";
+:root {
+  --font-color: black;
+  --nice-font-color: var(--font-color);
+  --background-color: white;
+}
 
-body, html {
+.dark {
+  --font-color: white;
+  --nice-font-color: var(--font-color);
+  --background-color: #222;
+
+  --nice-card: #111;
+  --nice-bg: #333;
+  --nice-bg-hover: #555;
+  --nice-bg-active: #444;
+  --nice-bg-focus: #444;
+  --nice-border-color: #333;
+  --nice-border: 1px solid var(--nice-border-color);
+  --nice-border-radius: 5px;
+}
+
+body {
   padding: 2rem;
   margin: 0;
 
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: black;
+  color: var(--nice-font-color);
+  background: var(--background-color);
 }
 
 h1 {
   margin: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+  font-size: 4em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--nice-base-color);
 }
 
 .mr-1 {
@@ -612,16 +790,37 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.text-right {
+  text-align: right;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 6rem;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 0.5rem;
+
+  .nav-item {
+    // display: inline-block;
+    // margin-right: 0.5rem;
+    // margin-bottom: 0.5rem;
+    width: 100%;
+  }
+}
 
 hr {
   margin: 5rem 0;
   padding: 0;
-  border-top: 1px solid var(--nice-border-color);
+  border: 0 none;
+  border-top: 2px solid var(--nice-border-color);
 }
 
 pre {
   padding: 1rem;
-  background: rgb(236, 236, 236);
+  background: var(--nice-bg);
   border-radius: var(--nice-border-radius);
 }
 </style>

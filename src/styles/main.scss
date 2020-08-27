@@ -76,7 +76,7 @@
     border: var(--nice-border);
     font-family: inherit;
     height: var(--nice-height);
-    // color: var(--font-color);
+    color: var(--nice-font-color);
 
     &.no-value {
       color: var(--nice-error-color);
