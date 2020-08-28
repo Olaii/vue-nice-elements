@@ -53,9 +53,9 @@
       <li class="nav-item">
         <a class="nav-link btn btn-block btn-default" href="#text">Text</a>
       </li>      
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link btn btn-block btn-default" href="#textarea">Textarea</a>
-      </li>      
+      </li>       -->
       <li class="nav-item">
         <a class="nav-link btn btn-block btn-default" href="#toggle">Toggle</a>
       </li>      
@@ -463,7 +463,7 @@ noMargin: Boolean</pre>
 
 
     <!------------- Nice textareat ------------->
-    <section id="textarea">
+    <!-- <section id="textarea">
       <h4>Nice Textarea</h4>
       <pre>
 value: {
@@ -492,7 +492,7 @@ important: {
       <NiceTextarea title="Nice textarea" />
     </section>
 
-    <hr />
+    <hr /> -->
 
 
     <!------------- Nice toggle ------------->

@@ -115,8 +115,8 @@ export default {
       }
 
       &.active {
-        right: 4px;
-        margin-right: 4px;
+        right: 0;
+        margin-left: 4px;
         left: 50%;
         color: white;
         background: var(--nice-base-color);
