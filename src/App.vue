@@ -1,6 +1,9 @@
 <template>
   <div id="app" class="nice-sanbox">
-    <h1>Nice Elements</h1>
+    <!-- <h1>Nice Elements</h1> -->
+    <div class="logo">
+      <img src="./assets/nice-elements.png" />
+    </div>
 
 
 
@@ -766,6 +769,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: var(--nice-font-color);
   background: var(--background-color);
+}
+
+.logo {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  img {
+    max-width: 100%;
+  }
 }
 
 h1 {
