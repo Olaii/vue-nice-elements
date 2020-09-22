@@ -5,8 +5,6 @@
       <img src="./assets/nice-elements.png" />
     </div>
 
-
-
     <ul class="nav">
       <li class="nav-item">
         <a class="nav-link btn btn-block btn-default" href="#notifications">Notifications</a>
@@ -22,6 +20,9 @@
       </li>      
       <li class="nav-item">
         <a class="nav-link btn btn-block btn-default" href="#color">Color</a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#color-select">Color select</a>
       </li>      
       <li class="nav-item">
         <a class="nav-link btn btn-block btn-default" href="#input">Input</a>
@@ -58,6 +59,9 @@
       </li>       -->
       <li class="nav-item">
         <a class="nav-link btn btn-block btn-default" href="#toggle">Toggle</a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link btn btn-block btn-default" href="#select">Select</a>
       </li>      
       <li class="nav-item">
         <a class="nav-link btn btn-block btn-default" href="#actions">Actions</a>
@@ -192,6 +196,19 @@ noMargin: Boolean</pre>
       <pre>&lt;NiceColor title="Nice color" v-model="colorValue" /></pre>
 
       <NiceColor title="Nice color" v-model="colorValue" />
+      <NiceColor title="Custom colors" v-model="colorValue" :colors="customColors" />
+    </section>
+
+    <hr />
+
+
+    <!------------- Nice color select ------------->
+    <section id="color-select">
+      <h4>Nice color select</h4>
+
+      <pre>&lt;NiceColorSelect title="Nice color select" v-model="values.niceColorSelect" /></pre>
+
+      <NiceColorSelect title="Nice color select" v-model="values.niceColorSelect" />
     </section>
 
     <hr />
@@ -613,6 +630,78 @@ disabled: Boolean</pre>
       <NiceToggle title="Nice toggle" />
     </section>
   
+    <hr />    
+    
+    
+    <!------------- Nice select ------------->
+    <section id="select">
+      <h4>Nice Select</h4>
+
+      <pre>&lt;NiceSelect title="Nice select" v-model="values.niceSelect" :list="dropdownValues" valueName="value" :inlineValues="true" /></pre>
+
+      <NiceSelect title="Nice select" v-model="values.niceSelect" :list="dropdownValues" valueName="value" />
+      <NiceSelect title="Nice select" v-model="values.niceSelect" :list="dropdownValues" valueName="value" :inlineValues="true" />
+    </section>
+
+    <hr />
+
+
+    <!------------- Nice textareat ------------->
+    <!-- <section id="textarea">
+      <h4>Nice Textarea</h4>
+      <pre>
+value: {
+  type: [String, Number],
+  default: ''
+},
+autosize: {
+  type: Boolean,
+  default: true
+},
+minHeight: {
+  type: [Number],
+  default: null
+},
+maxHeight: {
+  type: [Number],
+  default: null
+},
+important: {
+  type: [Boolean, Array],
+  default: false
+}</pre>
+
+      <pre>&lt;NiceTextarea title="Nice textarea" /></pre>
+
+      <NiceTextarea title="Nice textarea" />
+    </section>
+
+    <hr /> -->
+
+
+    <!------------- Nice toggle ------------->
+    <section id="toggle">
+      <h4>Nice Toggle</h4>
+      <pre>
+value: [Boolean],
+title: String,
+name: String,
+noMargin: Boolean,
+yes: {
+  default: "Yes",
+  type: [String, Number]
+},
+no: {
+  default: "No",
+  type: [String, Number]
+},
+disabled: Boolean</pre>
+
+      <pre>&lt;NiceToggle title="Nice toggle" /></pre>
+
+      <NiceToggle title="Nice toggle" />
+    </section>
+  
     <hr />
 
 
@@ -772,6 +861,12 @@ export default {
         { id: 1, key: 1, value: "Value 1" },
         { id: 2, key: 2, value: "Value 2" },
       ],
+      values: {
+        niceSelect: [
+          { id: 0, key: 0, value: "Value 0" },
+          { id: 1, key: 1, value: "Value 1" }
+        ]
+      },
       dropdownValue: null,
       dropdownValue2: null,
       colorValue: null,
@@ -785,7 +880,19 @@ export default {
       sideviewValue: false,
       darkMode: false,
       toastsPosition: "BOTTOM",
-      notificationsPosition: "TOP_RIGHT"
+      notificationsPosition: "TOP_RIGHT",
+      customColors: [
+        '#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
+        '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
+        '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
+        '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+        '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC', 
+        '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
+        '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680', 
+        '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
+        '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
+        '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'
+      ]
     }
   },
   
@@ -886,6 +993,11 @@ h1 {
   color: var(--nice-base-color);
 }
 
+h4 {
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
 .mr-1 {
   margin-right: 0.5rem;
 }
@@ -930,5 +1042,6 @@ pre {
   padding: 1rem;
   background: var(--nice-bg);
   border-radius: var(--nice-border-radius);
+  white-space: pre-wrap;
 }
 </style>
