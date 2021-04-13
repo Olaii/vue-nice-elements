@@ -1,6 +1,6 @@
 {
   "name": "vue-nice-elements",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Nice elements for Vue projects",
   "main": "./dist/NiceElements.umd.js",
   "scripts": {
@@ -15,6 +15,10 @@
     "dist",
     "README.md"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Olaii/vue-nice-elements"
+  },
   "dependencies": {
     "core-js": "3.3.2",
     "vue": "2.6.10"

@@ -2,13 +2,11 @@
 
 ![npm](https://img.shields.io/npm/dt/vue-nice-elements) [![npm version](https://badge.fury.io/js/vue-nice-elements.svg)](//npmjs.com/package/vue-nice-elements)
 
-
 ```js
-import NiceElements from'vue-nice-elements'
+import NiceElements from 'vue-nice-elements'
 import "vue-nice-elements/dist/NiceElements.css";
 Vue.use(NiceElements)
 ```
-
 
 ## Includes
 
@@ -34,33 +32,38 @@ Vue.use(NiceElements)
 - NiceToast
 - NiceToggle
 
-
 ## Project setup
+
 ```sh
 npm install
 ```
 
 #### Compiles and hot-reloads for development
+
 ```sh
 npm run serve
 ```
 
 #### Compiles and minifies for production
+
 ```sh
 npm run build-lib
 ```
 
 #### Run your unit tests
+
 ```sh
 npm run test:unit
 ```
 
 #### Run your end-to-end tests
+
 ```sh
 npm run test:e2e
 ```
 
 #### Lints and fixes files
+
 ```sh
 npm run lint
 ```

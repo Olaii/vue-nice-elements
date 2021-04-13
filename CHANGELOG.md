@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.1.7 (13.4.2021)
+- moved to GitHub,
+- added NiceColorSelect,
+- added NiceSelect,
+- added autocomplete, autofocus, checked, form, max, maxlength, min, minlength, pattern and step props to NiceInput,
+- fixes
+
+
 ## v0.1.6 (27.8.2020)
 - added better support for dark theme,
 - added position for toasts,
